@@ -1,0 +1,2054 @@
+<title>115 升資考 重點速記</title>
+<style>
+  :root{
+    --paper:#F5F6F3;
+    --card:#FFFFFF;
+    --ink:#161C22;
+    --ink-2:#4C5661;
+    --ink-3:#79838B;
+    --rule:#DBDFD8;
+    --rule-2:#EAEDE7;
+    --mark:#AF3627;
+    --mark-soft:#F1E1DD;
+    --seal:#2C5B4F;
+    --ok:#2C5B4F;
+    --warn:#8A5A11;
+    --grid:rgba(22,28,34,.05);
+    --shadow:0 1px 2px rgba(22,28,34,.05), 0 8px 24px -18px rgba(22,28,34,.35);
+
+    --sans:"PingFang TC","Noto Sans TC","Microsoft JhengHei UI","Microsoft JhengHei","Hiragino Sans GB",system-ui,sans-serif;
+    --serif:"Songti TC","Noto Serif TC","Source Han Serif TC","PMingLiU","MingLiU",Georgia,serif;
+    --mono:ui-monospace,"SFMono-Regular","Cascadia Mono","Consolas","Roboto Mono",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#10141A; --card:#171C23; --ink:#E7EAE5; --ink-2:#A9B2B8; --ink-3:#79848C;
+      --rule:#2A313A; --rule-2:#20262D; --mark:#E0796A; --mark-soft:#3A2320; --seal:#7EB4A3;
+      --ok:#7EB4A3; --warn:#D2A34E;
+      --grid:rgba(231,234,229,.045);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.9);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#10141A; --card:#171C23; --ink:#E7EAE5; --ink-2:#A9B2B8; --ink-3:#79848C;
+    --rule:#2A313A; --rule-2:#20262D; --mark:#E0796A; --mark-soft:#3A2320; --seal:#7EB4A3;
+    --ok:#7EB4A3; --warn:#D2A34E;
+    --grid:rgba(231,234,229,.045);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.9);
+  }
+  :root[data-theme="light"]{
+    --paper:#F5F6F3; --card:#FFFFFF; --ink:#161C22; --ink-2:#4C5661; --ink-3:#79838B;
+    --rule:#DBDFD8; --rule-2:#EAEDE7; --mark:#AF3627; --mark-soft:#F1E1DD; --seal:#2C5B4F;
+    --ok:#2C5B4F; --warn:#8A5A11;
+    --grid:rgba(22,28,34,.05);
+    --shadow:0 1px 2px rgba(22,28,34,.05), 0 8px 24px -18px rgba(22,28,34,.35);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.85;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.05rem 5rem}
+
+  /* ── 卷頭 ── */
+  header.sheet{
+    position:relative;margin:0 -1.05rem 1.5rem;padding:2.6rem 1.05rem 1.6rem;
+    border-bottom:1px solid var(--rule);
+    background-image:
+      repeating-linear-gradient(to right, var(--grid) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(to bottom, var(--grid) 0 1px, transparent 1px 22px);
+    background-position:center top;
+  }
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--mark);margin:0 0 .5rem}
+  h1{font-size:clamp(1.9rem,7vw,2.7rem);line-height:1.15;letter-spacing:-.01em;font-weight:800;margin:0 0 .7rem;text-wrap:balance}
+  h1 .thin{font-weight:400;color:var(--ink-2)}
+  .facts{display:flex;flex-wrap:wrap;gap:.35rem .55rem;margin:0;padding:0;list-style:none;font-size:.78rem;color:var(--ink-2)}
+  .facts li{background:var(--card);border:1px solid var(--rule);border-radius:2px;padding:.15rem .5rem;font-variant-numeric:tabular-nums}
+
+  /* ── 工具列 ── */
+  .bar{
+    position:sticky;top:0;z-index:20;margin:0 -1.05rem;padding:.5rem 1.05rem;
+    background:color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+    display:flex;flex-direction:column;gap:.4rem;
+  }
+  .bar::-webkit-scrollbar{display:none}
+  .modes{display:inline-flex;flex:0 0 auto;border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--card)}
+  .modes button{
+    font-family:var(--sans);font-size:.76rem;font-weight:600;color:var(--ink-2);
+    background:transparent;border:0;border-right:1px solid var(--rule);
+    padding:.36rem .6rem;cursor:pointer;white-space:nowrap;
+  }
+  .modes button:last-child{border-right:0}
+  .modes button[aria-pressed="true"]{background:var(--mark);color:#fff;font-weight:700}
+  :root[data-theme="dark"] .modes button[aria-pressed="true"],
+  .modes button[aria-pressed="true"]{color:var(--card)}
+  nav.jump{display:flex;gap:.3rem;flex:0 0 auto}
+  nav.jump a{font-size:.76rem;color:var(--ink-2);text-decoration:none;border:1px solid var(--rule);border-radius:2px;padding:.34rem .55rem;white-space:nowrap}
+  nav.jump a:hover{color:var(--mark);border-color:var(--mark)}
+
+  /* ── 科目分頁 ── */
+  .barrow{display:flex;align-items:center;gap:.45rem;overflow-x:auto;scrollbar-width:none}
+  .barrow::-webkit-scrollbar{display:none}
+  .tabs{display:flex;gap:.3rem;flex:0 0 auto}
+  .tabs button{
+    font-family:var(--sans);font-size:.82rem;font-weight:700;white-space:nowrap;
+    color:var(--ink-2);background:transparent;border:1px solid var(--rule);
+    border-radius:2px;padding:.34rem .62rem;cursor:pointer;
+  }
+  .tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .tabs button .badge{
+    display:inline-block;margin-left:.3rem;font-family:var(--mono);font-size:.66rem;
+    color:var(--mark);font-weight:700;
+  }
+  .tabs button[aria-pressed="true"] .badge{color:var(--paper);opacity:.75}
+  .subject{display:none}
+  .subject.on{display:block}
+  .subfacts{
+    display:flex;flex-wrap:wrap;gap:.3rem .45rem;margin:1.6rem 0 0;padding:0;list-style:none;
+    font-size:.75rem;color:var(--ink-3);
+  }
+  .subfacts li{border:1px solid var(--rule);border-radius:2px;padding:.1rem .45rem;font-variant-numeric:tabular-nums}
+  .subfacts li.hi{color:var(--mark);border-color:var(--mark)}
+
+  /* ── 區段 ── */
+  section{margin-top:2.6rem;scroll-margin-top:6.6rem}
+  .sec-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;color:var(--ink-3);margin:0 0 .15rem}
+  h2{font-size:1.3rem;font-weight:800;letter-spacing:-.005em;margin:0 0 .3rem;line-height:1.4}
+  .lede{color:var(--ink-2);font-size:.87rem;margin:0 0 1.1rem;max-width:38em}
+
+  /* ── 頻率條 ── */
+  .freq{display:flex;flex-direction:column;gap:.1rem;margin:0;padding:0;list-style:none}
+  .freq li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:.6rem;padding:.42rem 0;border-bottom:1px solid var(--rule-2)}
+  .freq .name{font-size:.87rem}
+  .freq .name code{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-left:.3rem}
+  .freq .pct{font-family:var(--mono);font-size:.8rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .freq .track{grid-column:1/-1;height:3px;background:var(--rule-2);border-radius:2px;overflow:hidden}
+  .freq .fill{display:block;height:100%;background:var(--mark);opacity:.85}
+  .freq li:nth-child(n+6) .fill{background:var(--ink-3);opacity:.55}
+  .subfreq{font-size:.83rem;color:var(--ink-2);border-left:2px solid var(--rule);padding-left:.8rem;margin-top:1.1rem}
+  .subfreq b{color:var(--ink);font-weight:700}
+
+  /* ── 條文卡 ── */
+  .card{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:1rem 1rem 1.1rem;margin-bottom:.85rem;box-shadow:var(--shadow)}
+  .card > h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem;font-size:1.02rem;font-weight:800;margin:0 0 .1rem;line-height:1.5}
+  .art{font-family:var(--mono);font-size:.82rem;font-weight:700;color:var(--mark);background:var(--mark-soft);border-radius:2px;padding:.05rem .35rem}
+  .stars{color:var(--mark);letter-spacing:.05em;font-size:.8rem}
+  .allbtn{
+    margin-left:auto;font-family:var(--sans);font-size:.72rem;font-weight:600;
+    color:var(--ink-3);background:transparent;border:1px solid var(--rule);border-radius:2px;
+    padding:.15rem .45rem;cursor:pointer;display:none;
+  }
+  body.mask-a .allbtn{display:inline-block}
+  .allbtn:hover{color:var(--mark);border-color:var(--mark)}
+  .why{font-size:.76rem;color:var(--ink-3);margin:.1rem 0 .7rem;font-variant-numeric:tabular-nums}
+
+  /* ── 問答小題 ── */
+  ul.qa{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+  ul.qa > li{
+    padding:.5rem 0;border-bottom:1px dashed var(--rule-2);
+    font-size:.92rem;
+  }
+  ul.qa > li:last-child{border-bottom:0;padding-bottom:0}
+  .q{display:block;font-weight:700;color:var(--ink)}
+  .q::before{content:"問 ";font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--mark);letter-spacing:.08em}
+  .a{display:block;color:var(--ink-2);margin-top:.2rem}
+  .a i{font-style:normal;color:var(--ink);font-weight:700}
+  .a .sub{display:block;padding-left:.9rem;border-left:2px solid var(--rule-2);margin-top:.25rem}
+  .reveal{
+    display:none;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.04em;
+    color:var(--mark);background:var(--mark-soft);
+    border:1px dashed var(--mark);border-radius:2px;
+    padding:.1rem .6rem;margin-top:.3rem;cursor:pointer;
+  }
+  .reveal:hover{background:color-mix(in srgb, var(--mark) 20%, transparent)}
+  .reveal:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+  body.mask-a .a{display:none}
+  body.mask-a .a.open{display:block}
+  body.mask-a .reveal{display:inline-block}
+  body.mask-a .a.open + .reveal{display:none}
+
+  .tip{font-family:var(--serif);font-size:.93rem;line-height:1.8;border-left:2px solid var(--mark);padding:.15rem 0 .15rem .8rem;margin:.9rem 0 0;color:var(--ink-2)}
+  .tip b{color:var(--ink)}
+
+  /* ── 數字（給分點） ── */
+  .k{
+    font:inherit;font-weight:700;color:var(--mark);
+    background:none;border:0;padding:0 .05em;margin:0;border-radius:2px;
+    cursor:default;font-variant-numeric:tabular-nums;
+  }
+  body.mask-k .k{color:transparent;background:var(--mark-soft);box-shadow:inset 0 -1px 0 var(--mark);cursor:pointer}
+  body.mask-k .k:hover{background:color-mix(in srgb, var(--mark) 22%, transparent)}
+  body.mask-k .k.shown{color:var(--mark);background:none;box-shadow:none;text-decoration:underline dotted var(--mark)}
+  body.mask-k .qans .k,
+  body.mask-k .wrongrow .wa .k{color:var(--mark);background:none;box-shadow:none;cursor:default}
+  .k:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+
+  /* ── 表格 ── */
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -1.05rem 1.1rem;padding:0 1.05rem}
+  table{border-collapse:collapse;width:100%;min-width:20rem;font-size:.87rem}
+  caption{text-align:left;font-size:.72rem;color:var(--ink-3);font-family:var(--mono);letter-spacing:.1em;padding-bottom:.4rem}
+  th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--rule-2);vertical-align:top}
+  th{font-size:.76rem;color:var(--ink-3);font-weight:600;letter-spacing:.04em;border-bottom:1px solid var(--rule)}
+  td:first-child{white-space:nowrap;color:var(--ink)}
+  td .k{white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+
+  /* ── 七步框架 ── */
+  ol.flow{list-style:none;counter-reset:s;margin:0;padding:0}
+  ol.flow li{counter-increment:s;position:relative;padding:.5rem 0 .5rem 2.3rem;border-bottom:1px solid var(--rule-2);font-size:.92rem}
+  ol.flow li::before{
+    content:counter(s);position:absolute;left:0;top:.62rem;
+    width:1.55rem;height:1.55rem;line-height:1.55rem;text-align:center;
+    font-family:var(--mono);font-size:.75rem;font-weight:700;
+    color:var(--mark);border:1px solid var(--mark);border-radius:50%;
+  }
+  ol.flow li:last-child{border-bottom:0}
+
+  .rules{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.9rem}
+  .rules li{border-left:2px solid var(--rule);padding-left:.85rem;font-size:.9rem}
+  .rules h4{margin:0 0 .15rem;font-size:.95rem;font-weight:800}
+
+  /* ── 測驗：起始面板 ── */
+  .panel{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:1rem;box-shadow:var(--shadow)}
+  .topics{display:flex;flex-direction:column}
+  .topic{
+    display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;
+    background:none;border:0;border-bottom:1px solid var(--rule-2);
+    padding:.62rem .15rem;cursor:pointer;font:inherit;color:inherit;
+  }
+  .topic:last-child{border-bottom:0}
+  .topic:hover{background:var(--rule-2)}
+  .topic .tname{flex:1;font-size:.9rem;font-weight:700;line-height:1.5}
+  .topic .tart{display:block;font-family:var(--mono);font-size:.68rem;font-weight:400;color:var(--ink-3)}
+  .topic .tmeta{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;line-height:1.5}
+  .topic .tmeta b{display:block;font-weight:700;color:var(--ok)}
+  .topic .tmeta b.bad{color:var(--mark)}
+  .topic .tmeta b.new{color:var(--ink-3);font-weight:400}
+  .topic .go{font-family:var(--mono);font-size:.95rem;color:var(--mark)}
+  .start{
+    width:100%;font-family:var(--sans);font-size:.82rem;font-weight:700;
+    color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:2px;
+    padding:.5rem 1rem;cursor:pointer;margin-top:.9rem;
+  }
+  .start:hover{color:var(--mark);border-color:var(--mark)}
+  .start:disabled{opacity:.45;cursor:default}
+  .start:disabled:hover{color:var(--ink-2);border-color:var(--rule)}
+  .stat-line{font-size:.76rem;color:var(--ink-3);margin:.65rem 0 0;font-variant-numeric:tabular-nums;line-height:1.6}
+  .stat-line b{color:var(--ink-2);font-weight:700}
+  .warnline{color:var(--warn)}
+
+  /* ── 測驗：題卡 ── */
+  .quizcard,.result{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:1rem;box-shadow:var(--shadow)}
+  /* 測驗進行中收起說明，讓題目緊貼標題 */
+  #test.quizzing > .lede{display:none}
+  .qtop{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);letter-spacing:.06em}
+  .qtop .quit{margin-left:auto;background:none;border:0;color:var(--ink-3);font-family:var(--mono);font-size:.72rem;cursor:pointer;padding:0}
+  .qtop .quit:hover{color:var(--mark)}
+  .bar-prog{height:3px;background:var(--rule-2);border-radius:2px;margin:.55rem 0 .9rem;overflow:hidden}
+  .bar-prog span{display:block;height:100%;background:var(--mark)}
+  .qtext{font-size:1.08rem;font-weight:800;line-height:1.65;margin:0 0 .9rem;text-wrap:balance}
+  .qans{font-size:.94rem;color:var(--ink-2);border-left:2px solid var(--rule);padding-left:.85rem;margin:0 0 1rem}
+  .qans i{font-style:normal;color:var(--ink);font-weight:700}
+  .qans .sub{display:block;padding-left:.9rem;border-left:2px solid var(--rule-2);margin-top:.25rem}
+  .qans .k{color:var(--mark);font-weight:700}
+  .showbtn{
+    width:100%;font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--mark);
+    background:var(--mark-soft);border:1px dashed var(--mark);border-radius:2px;
+    padding:.5rem;cursor:pointer;
+  }
+  .gradeq{font-size:.74rem;color:var(--ink-3);margin:0 0 .4rem;font-family:var(--mono);letter-spacing:.08em}
+  .grades{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+  .grades button{
+    font-family:var(--sans);font-size:.82rem;font-weight:700;line-height:1.35;
+    padding:.5rem .3rem;border-radius:2px;cursor:pointer;
+    background:var(--card);border:1px solid var(--rule);color:var(--ink-2);
+  }
+  .grades .g-r{border-color:var(--ok);color:var(--ok)}
+  .grades .g-v{border-color:var(--warn);color:var(--warn)}
+  .grades .g-w{border-color:var(--mark);color:var(--mark)}
+  .grades button small{display:block;font-size:.66rem;font-weight:400;opacity:.75}
+  .grades button:hover{background:var(--rule-2)}
+
+  /* ── 測驗：結果 ── */
+  .score{display:flex;gap:.4rem;flex-wrap:wrap;margin:.5rem 0 1rem}
+  .score span{
+    font-family:var(--mono);font-size:.78rem;padding:.2rem .5rem;
+    border:1px solid var(--rule);border-radius:2px;font-variant-numeric:tabular-nums;
+  }
+  .score .s-r{color:var(--ok);border-color:var(--ok)}
+  .score .s-v{color:var(--warn);border-color:var(--warn)}
+  .score .s-w{color:var(--mark);border-color:var(--mark)}
+  .again{display:flex;gap:.4rem;margin-top:1rem;flex-wrap:wrap}
+  .again button{
+    flex:1 1 8rem;font-family:var(--sans);font-size:.82rem;font-weight:700;
+    padding:.45rem .6rem;border-radius:2px;cursor:pointer;
+    background:var(--ink);color:var(--card);border:0;
+  }
+  .again button.sec{background:transparent;color:var(--ink-2);border:1px solid var(--rule)}
+  .again button:hover{background:var(--mark);color:var(--card)}
+
+  /* ── 錯題本 ── */
+  .wrongrow{border-bottom:1px solid var(--rule-2);padding:.6rem 0}
+  .wrongrow:last-of-type{border-bottom:0}
+  .wrowhead{display:flex;gap:.6rem;align-items:baseline;width:100%;text-align:left;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit}
+  .wrongrow .wq{flex:1;font-size:.88rem;font-weight:600;line-height:1.6}
+  .wrongrow .wn{font-family:var(--mono);font-size:.74rem;color:var(--mark);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .wrongrow .wart{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);display:block}
+  .wrongrow .wa{display:none;font-size:.88rem;color:var(--ink-2);border-left:2px solid var(--rule);padding-left:.8rem;margin-top:.45rem}
+  .wrongrow .wa .k{color:var(--mark);font-weight:700}
+  .wrongrow.open .wa{display:block}
+  .acc{height:3px;background:var(--mark-soft);margin-top:.4rem;border-radius:2px;overflow:hidden}
+  .acc span{display:block;height:100%;background:var(--ok)}
+  .empty{font-size:.87rem;color:var(--ink-3);border:1px dashed var(--rule);border-radius:3px;padding:1.2rem 1rem;text-align:center;line-height:1.7}
+  .ghost{font-size:.75rem;color:var(--ink-3);background:none;border:1px solid var(--rule);border-radius:2px;padding:.32rem .6rem;cursor:pointer}
+  .ghost:hover{color:var(--mark);border-color:var(--mark)}
+  .ghost.danger{color:var(--card);background:var(--mark);border-color:var(--mark);font-weight:700}
+  .ghost.danger:hover{color:var(--card)}
+  .ghost.done{color:var(--ok);border-color:var(--ok)}
+  .hot{
+    font-family:var(--mono);font-size:.66rem;font-weight:700;color:var(--mark);
+    border:1px solid var(--mark);border-radius:2px;padding:0 .25rem;margin-right:.35rem;
+    letter-spacing:.04em;vertical-align:.08em;
+  }
+  details.io{margin-top:1.1rem;font-size:.78rem;color:var(--ink-3)}
+  details.io summary{cursor:pointer}
+  details.io textarea{
+    width:100%;min-height:4.5rem;font-family:var(--mono);font-size:.7rem;
+    border:1px solid var(--rule);border-radius:2px;background:var(--paper);
+    color:var(--ink);padding:.45rem;margin-top:.5rem;
+  }
+  details.io .iobtns{display:flex;gap:.4rem;margin-top:.45rem}
+
+  footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.78rem;color:var(--ink-3);line-height:1.7}
+  footer code{font-family:var(--mono);font-size:.74rem}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="sheet">
+  <p class="eyebrow">115 交通事業鐵路人員升資考 · 員級晉高員級</p>
+  <h1>重點速記</h1>
+  <ul class="facts">
+    <li>專業：採購法 · 企業管理 · 運輸學</li>
+    <li>共同：法學知識與英文</li>
+    <li>依歷屆試題實測統計</li>
+  </ul>
+</header>
+
+<div class="bar">
+  <div class="barrow">
+    <div class="tabs" id="tabs" role="group" aria-label="科目"></div>
+  </div>
+  <div class="barrow">
+    <div class="modes" role="group" aria-label="複習模式">
+      <button type="button" data-mode="none" aria-pressed="true">全部顯示</button>
+      <button type="button" data-mode="a" aria-pressed="false">遮答案</button>
+      <button type="button" data-mode="k" aria-pressed="false">只遮數字</button>
+    </div>
+    <nav class="jump" id="jump"></nav>
+  </div>
+</div>
+
+<div class="subject on" data-sub="pl" data-name="採購法">
+<ul class="subfacts">
+  <li class="hi">全申論 4 題 × 25 分</li>
+  <li>120 分鐘</li>
+  <li>三年一輪 100·103·106·109·112 → 115</li>
+  <li>統計基礎：歷屆 307 申論題</li>
+</ul>
+
+<section id="freq" data-nav="頻率">
+  <p class="sec-label">01 / 先讀哪裡</p>
+  <h2>出題頻率排行</h2>
+  <p class="lede">三等／高員三級／薦任升官等申論 216 題的主題命中率。一題可命中多個主題，故不加總為 100%。</p>
+  <ul class="freq">
+    <li><span class="name">異議、申訴<code>§74–85</code></span><span class="pct">15.7%</span><span class="track"><span class="fill" style="width:100%"></span></span></li>
+    <li><span class="name">開標、流標、廢標、不予開標決標<code>§45·48·50</code></span><span class="pct">13.0%</span><span class="track"><span class="fill" style="width:83%"></span></span></li>
+    <li><span class="name">停權處分<code>§101·103</code></span><span class="pct">11.6%</span><span class="track"><span class="fill" style="width:74%"></span></span></li>
+    <li><span class="name">公開招標、等標期、招標公告</span><span class="pct">9.7%</span><span class="track"><span class="fill" style="width:62%"></span></span></li>
+    <li><span class="name">押標金、保證金<code>§30–31</code></span><span class="pct">8.8%</span><span class="track"><span class="fill" style="width:56%"></span></span></li>
+    <li><span class="name">底價<code>§46·47</code></span><span class="pct">8.3%</span><span class="track"><span class="fill" style="width:53%"></span></span></li>
+    <li><span class="name">驗收<code>§71–73</code></span><span class="pct">8.3%</span><span class="track"><span class="fill" style="width:53%"></span></span></li>
+    <li><span class="name">履約管理、契約變更、逾期違約金</span><span class="pct">7.9%</span><span class="track"><span class="fill" style="width:50%"></span></span></li>
+    <li><span class="name">決標原則、最低標、異常低價<code>§52·58</code></span><span class="pct">6.9%</span><span class="track"><span class="fill" style="width:44%"></span></span></li>
+    <li><span class="name">分包、轉包<code>§65–67</code></span><span class="pct">4.6%</span><span class="track"><span class="fill" style="width:29%"></span></span></li>
+    <li><span class="name">統包、共同投標<code>§24·25</code></span><span class="pct">4.2%</span><span class="track"><span class="fill" style="width:27%"></span></span></li>
+    <li><span class="name">採購人員、利益迴避<code>§15</code></span><span class="pct">3.7%</span><span class="track"><span class="fill" style="width:24%"></span></span></li>
+  </ul>
+  <p class="subfreq">
+    四等／員級申論 91 題的排序略有不同：異議申訴 12.1%｜<b>金額級距 11.0%</b>｜開標決標 11.0%｜停權 8.8%｜驗收 7.7%｜限制性招標 6.6%｜廠商資格 6.6%。
+    員級卷更愛考「金額級距的法律效果」與名詞解釋型（何謂公告金額、何謂共同投標、何謂減價收受）——這類題型在高員級卷同樣會當送分題出現。
+  </p>
+</section>
+
+<section id="must" data-nav="必背">
+  <p class="sec-label">02 / 條文</p>
+  <h2>必背條文</h2>
+  <p class="lede">依歷屆命中率排序。按上方「遮答案」，每一小題只剩問句，答完再點〈答案〉對——答不出來的那幾題就是你今天要背的。</p>
+
+  <div class="card">
+    <h3><span class="art">§101 · §103</span>停權處分<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">全法引用率最高，36 份試卷明確引用</p>
+    <ul class="qa">
+      <li>
+        <span class="q">§101 共幾款？其中須具備「情節重大」者有哪幾款？</span>
+        <span class="a">共 <button class="k">15</button> 款；須情節重大者 <button class="k">7</button> 款——第 <button class="k">3</button> 擅自減省工料、第 <button class="k">4</button> 虛偽不實文件、第 <button class="k">8</button> 查驗驗收不合格、第 <button class="k">9</button> 不履行保固、第 <button class="k">10</button> 延誤履約期限、第 <button class="k">12</button> 可歸責於廠商致解除終止契約、第 <button class="k">14</button> 歧視性別／原住民／身障／弱勢。</span>
+      </li>
+      <li>
+        <span class="q">機關為停權處分前，應踐行哪些程序？（108 年修法重點）</span>
+        <span class="a">通知前應給予廠商<i>口頭或書面陳述意見</i>之機會 → 應成立<i>採購工作及審查小組</i>認定 → 情節重大之審酌應考量<i>機關所受損害之輕重、廠商可歸責程度、實際補救或賠償措施</i>。</span>
+      </li>
+      <li>
+        <span class="q">§103 停權期間如何分級？</span>
+        <span class="a">三級距——
+          <span class="sub">1–5 款、15 款，或第 6 款判<i>有期徒刑</i> → <button class="k">3 年</button></span>
+          <span class="sub">13、14 款，或第 6 款判<i>拘役、罰金、緩刑</i> → <button class="k">1 年</button></span>
+          <span class="sub">7–12 款 → 累犯遞增：前 5 年未被刊登 <button class="k">3 個月</button>／已刊登 1 次 <button class="k">6 個月</button>／累計 2 次以上 <button class="k">1 年</button></span>
+        </span>
+      </li>
+      <li>
+        <span class="q">停權後若判決撤銷原處分或無罪確定？機關還能不能向停權廠商採購？</span>
+        <span class="a">經判決撤銷原處分或無罪確定者，<button class="k">應註銷</button>其刊登。機關因特殊需要，經<button class="k">上級機關核准</button>，仍得向停權廠商採購。</span>
+      </li>
+    </ul>
+    <p class="tip">113 年司法、調查三等直接整題考「<b>哪幾款須情節重大</b>」（20 分）。這 7 款背起來就是一題。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§74–§85-1</span>異議、申訴與履約爭議<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">申論第 1 名主題，15.7%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">§75 異議期限三種各是多久？</span>
+        <span class="a">
+          <span class="sub">對<i>招標文件規定</i> → 自公告或邀標次日起 <button class="k">等標期 1/4</button>（尾數不足一日以一日計，<i>但不得少於 <button class="k">10 日</button></i>）</span>
+          <span class="sub">對<i>釋疑、變更、補充</i> → 接獲通知或公告次日起 <button class="k">10 日</button></span>
+          <span class="sub">對<i>過程、結果</i> → 接獲通知或公告次日起 <button class="k">10 日</button>；未經通知公告者為知悉或可得知悉次日起 10 日，<i>至遲不得逾決標日次日起 <button class="k">15 日</button></i></span>
+        </span>
+      </li>
+      <li>
+        <span class="q">機關收受異議後多久要處理？</span>
+        <span class="a">自收受異議之次日起 <button class="k">15 日</button>內為適當之處理。</span>
+      </li>
+      <li>
+        <span class="q">§76 申訴的期限與門檻？有無例外？</span>
+        <span class="a">不服異議處理結果或機關逾期不處理 → <button class="k">15 日</button>內書面向採購申訴審議委員會申訴。<i>限公告金額以上</i>；但爭議屬 §31 押標金不予發還或追繳者，<button class="k">不受公告金額以上之限制</button>（常考陷阱）。</span>
+      </li>
+      <li>
+        <span class="q">§78 申訴程序的兩個日數？</span>
+        <span class="a">申訴應繕副本送機關，機關 <button class="k">10 日</button>內陳述意見；申訴會應於收受申訴書之次日起 <button class="k">40 日</button>內完成審議，必要時得<button class="k">延長 40 日</button>。</span>
+      </li>
+      <li>
+        <span class="q">審議判斷的法律效力為何？廠商可請求什麼費用？</span>
+        <span class="a">§83：審議判斷<button class="k">視同訴願決定</button>。§85：判斷指明違法者機關應另為適法處置，廠商得請求償付<button class="k">準備投標、異議、申訴之必要費用</button>。</span>
+      </li>
+      <li>
+        <span class="q">§85-1 履約爭議如何處理？何謂「先調後仲」？</span>
+        <span class="a">調解或仲裁；<button class="k">調解屬廠商申請者，機關不得拒絕</button>。工程及技術服務採購之調解，申訴會應提出調解建議或方案，<i>因機關不同意致調解不成立者，廠商提付仲裁，機關不得拒絕</i>——即<button class="k">先調後仲</button>之強制仲裁。</span>
+      </li>
+      <li>
+        <span class="q">申訴與調解仲裁，適用範圍怎麼分？</span>
+        <span class="a"><i>申訴＝招標、審標、決標爭議（公法）；調解仲裁＝履約爭議（私法）</i>。112 年員級直接考這個差異。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§48 · §50</span>開標家數與不予開標決標<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">申論第 2 名主題，113、114 連續兩年出題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">§48 開標的原則家數？例外幾款、內容為何？</span>
+        <span class="a">有 <button class="k">3 家</button>以上合格廠商投標即應依所定時間開標決標。例外 <button class="k">8</button> 款：①變更或補充招標文件內容 ②發現足以影響採購公正之違法或不當行為 ③依 §82 暫緩開標 ④依 §84 暫停採購程序 ⑤依 §85 另為適法之處置 ⑥因應突發事故 ⑦採購計畫變更或取銷採購 ⑧經主管機關認定之特殊情形。</span>
+      </li>
+      <li>
+        <span class="q">第一次因未滿三家流標，第二次招標有何不同？</span>
+        <span class="a">§48 II：第二次招標之等標期<button class="k">得縮短</button>，並<button class="k">得不受三家之限制</button>（114 年整題考這點）。</span>
+      </li>
+      <li>
+        <span class="q">§50 不予開標、不予決標的事由有幾款？</span>
+        <span class="a"><button class="k">7</button> 款：①未依規定投標 ②內容不符 ③<i>借用或冒用他人名義或證件投標</i> ④以不實文件投標 ⑤不同投標廠商間投標文件內容有<i>重大異常關聯</i> ⑥屬 §103 I 不得參加投標者 ⑦其他影響採購公正之違反法令行為。</span>
+      </li>
+      <li>
+        <span class="q">若決標或簽約「後」才發現上述情形，機關應如何處理？</span>
+        <span class="a"><button class="k">撤銷決標、終止或解除契約，並得追償損失</button>；但撤銷決標、終止或解除契約反不符公共利益，並經<button class="k">上級機關核准</button>者，不在此限。致採購程序無法繼續進行者，機關<button class="k">得宣布廢標</button>（§50 III）。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§30 · §31</span>押標金<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">114 年升官等第 1 題整題（25 分）</p>
+    <ul class="qa">
+      <li>
+        <span class="q">§30 得免收押標金之情形有哪些？</span>
+        <span class="a">①勞務採購<button class="k">以免收為原則</button> ②<button class="k">未達公告金額</button>之工程、財物採購 ③以<button class="k">議價</button>方式辦理者 ④依市場交易慣例或案件特性無收取之必要或可能。</span>
+      </li>
+      <li>
+        <span class="q">§31 II 不予發還並追繳押標金的事由有幾款？</span>
+        <span class="a"><button class="k">7</button> 款：①以虛偽不實文件投標 ②<i>借用他人名義或證件投標，或容許他人借用本人名義或證件參加投標</i> ③冒用他人名義或證件投標 ④得標後拒不簽約 ⑤得標後未於期限內繳足保證金或提供擔保 ⑥對採購有關人員行求、期約或交付不正利益 ⑦其他經主管機關認定有影響採購公正之違反法令行為。</span>
+      </li>
+      <li>
+        <span class="q">追繳押標金的時效怎麼算？</span>
+        <span class="a">請求權因 <button class="k">5 年</button>不行使而消滅——未依規定繳納者自<button class="k">開標日</button>起算；已發還者自<button class="k">發還日</button>起算；追繳原因發生或可得知悉在後者，自該時起算。自不予開標、不予決標、廢標或決標日起逾 <button class="k">15 年</button>者，不得行使。</span>
+      </li>
+    </ul>
+    <p class="tip">借牌案的標準考法：押標金追繳（§31）＋ 不予決標／撤銷決標（§50）＋ 停權（§101）＋ 刑責（§87）四合一。看到「借用他人名義」就把四條全部寫上去。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§46 · §47</span>底價<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">114、112 年兩度整題 25 分，題幹幾乎一字不差</p>
+    <ul class="qa">
+      <li>
+        <span class="q">底價的編列依據為何？由誰核定？</span>
+        <span class="a">依<button class="k">圖說、規範、契約</button>，並考量<button class="k">成本、市場行情及政府機關決標資料</button>，<button class="k">逐項編列</button>；由<button class="k">機關首長或其授權人員</button>核定。</span>
+      </li>
+      <li>
+        <span class="q">三種招標方式的底價訂定時機？</span>
+        <span class="a">公開招標 → <button class="k">開標前</button>；選擇性招標 → <button class="k">資格審查後之下一階段開標前</button>；限制性招標 → <button class="k">議價或比價前</button>。</span>
+      </li>
+      <li>
+        <span class="q">§47 得不訂底價的三種情形？</span>
+        <span class="a">①訂定底價確有困難之<i>特殊或複雜</i>案件 ②<i>最有利標</i> ③<i>小額採購</i>（金額不得逾公告金額<button class="k">十分之一</button>）。</span>
+      </li>
+    </ul>
+    <p class="tip">題幹會問「<b>編列依據及核定程序</b>」——依據、考量因素、逐項編列、核定層級、三種時機，五塊都寫齊才拿滿分。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§52–§58</span>決標、協商與異常低價<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <ul class="qa">
+      <li>
+        <span class="q">§53 最低標價超過底價時的處理程序？</span>
+        <span class="a">洽最低標<button class="k">減價一次</button> → 仍超過 → 所有合格廠商<button class="k">重新比減價格，不得逾 3 次</button> → 仍超底價而不逾預算且有緊急情事 → 經原底價核定人核准，<button class="k">不得超過底價 8%</button>；<i>查核金額以上之採購超過底價 <button class="k">4%</button> 者，應先報上級機關核准</i>。</span>
+      </li>
+      <li>
+        <span class="q">§54 未訂底價者，價格逾建議金額或預算時？</span>
+        <span class="a">減價一次 → 比減不逾 3 次 → 仍逾越 → <button class="k">廢標</button>。</span>
+      </li>
+      <li>
+        <span class="q">§57 協商措施應遵守哪些原則？</span>
+        <span class="a"><button class="k">全程保密</button>；<button class="k">平等對待所有合於招標文件規定之投標廠商</button>；發給協商文件；允許廠商於一定期間內修改投標文件。（113、110 年皆整題考）</span>
+      </li>
+      <li>
+        <span class="q">§56 最有利標有哪些限制？</span>
+        <span class="a">序位或計數方式綜合評選；<button class="k">未列入之項目不得作為評選參考</button>；綜合評選<button class="k">不得逾 3 次</button>；評定應附理由；採最有利標應<button class="k">先報經上級機關核准</button>。</span>
+      </li>
+      <li>
+        <span class="q">§58 標價偏低顯不合理時，機關如何處置？</span>
+        <span class="a">總標價或部分標價偏低顯不合理，有降低品質、不能誠信履約之虞 → <button class="k">限期通知提出說明或擔保</button> → 未於期限內提出合理說明或擔保 → <button class="k">不決標予該廠商，以次低標為最低標廠商</button>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§71 · §72</span>驗收與減價收受<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">各等別都愛考；「減價收受」是名詞解釋常客</p>
+    <ul class="qa">
+      <li>
+        <span class="q">§71 驗收的人員如何指派？有何禁止規定？勞務採購適用嗎？</span>
+        <span class="a">應<button class="k">限期</button>辦理驗收，得辦理<button class="k">部分驗收</button>；由機關首長或授權人員指派適當人員<button class="k">主驗</button>，通知接管或使用單位<button class="k">會驗</button>；<i><button class="k">承辦採購單位人員不得為主驗人或樣品材料檢驗人</button></i>；勞務採購<button class="k">準用</button>之。</span>
+      </li>
+      <li>
+        <span class="q">驗收結果不符時，§72 的處理方式？</span>
+        <span class="a">通知廠商限期<button class="k">改善、拆除、重作、退貨或換貨</button>。</span>
+      </li>
+      <li>
+        <span class="q">何謂「減價收受」？要件與核准層級為何？</span>
+        <span class="a">驗收結果與規定不符，而<button class="k">不妨礙安全及使用需求</button>、<button class="k">無減少通常效用或契約預定效用</button>，經機關檢討<button class="k">不必拆換或拆換確有困難</button>者，得於必要時<i>減價收受</i>。核准層級：<button class="k">查核金額以上報上級機關核准</button>；未達查核金額由<button class="k">機關首長或其授權人員</button>核准。</span>
+      </li>
+      <li>
+        <span class="q">部分驗收先行使用的要件？</span>
+        <span class="a">不符部分<button class="k">非屬重要</button>、其他部分能先行使用、經機關檢討確有必要 → 經首長或授權人員核准，就其他部分辦理驗收並<button class="k">支付部分價金</button>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§65–§67</span>轉包與分包<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年三等、112 年高員三級都考</p>
+    <ul class="qa">
+      <li>
+        <span class="q">轉包與分包如何區別？</span>
+        <span class="a"><i>轉包</i>＝將原契約中應自行履行之<button class="k">全部或其主要部分</button>由其他廠商代為履行，<i>禁止</i>；<i>分包</i>＝非轉包而將契約之<button class="k">部分</button>由其他廠商代為履行，<i>允許</i>。</span>
+      </li>
+      <li>
+        <span class="q">廠商違法轉包的法律效果？</span>
+        <span class="a">機關得<button class="k">解除契約、終止契約或沒收保證金</button>，並得請求損害賠償；<button class="k">轉包廠商與得標廠商負連帶履行及賠償責任，再轉包者亦同</button>；並構成 §101 I 第 <button class="k">11</button> 款停權事由。</span>
+      </li>
+      <li>
+        <span class="q">分包廠商在什麼要件下，可直接向機關請求價金？</span>
+        <span class="a">須<button class="k">分包契約報備於採購機關</button>，且<button class="k">得標廠商就分包部分設定權利質權予分包廠商</button>；此時民法 §513 抵押權及 §816 添附請求權<button class="k">及於得標廠商對機關之價金或報酬請求權</button>。</span>
+      </li>
+      <li>
+        <span class="q">分包廠商就分包部分負何種責任？</span>
+        <span class="a">與得標廠商<button class="k">連帶負瑕疵擔保責任</button>。</span>
+      </li>
+    </ul>
+    <p class="tip">判斷標準只有一句：<b>「全部或主要部分」是轉包（違法），「部分」是分包（合法）</b>。答題先寫定義比較，再寫法律效果。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§18 · §20 · §22 · §26</span>招標方式與規格<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <ul class="qa">
+      <li>
+        <span class="q">§18 三種招標方式的定義？</span>
+        <span class="a">公開招標＝公告邀請<button class="k">不特定</button>廠商投標；選擇性招標＝公告方式<button class="k">預先審查資格</button>後，再邀請符合資格之廠商投標；限制性招標＝<button class="k">不經公告程序</button>，邀請 <button class="k">2 家以上廠商比價</button>或<button class="k">僅邀請 1 家廠商議價</button>。</span>
+      </li>
+      <li>
+        <span class="q">§20 得採選擇性招標的情形有幾款？</span>
+        <span class="a"><button class="k">5</button> 款：①經常性採購 ②投標文件審查須費時長久 ③廠商準備投標需高額費用 ④廠商資格條件複雜 ⑤研究發展事項。</span>
+      </li>
+      <li>
+        <span class="q">§22 限制性招標共幾款？最常考的是哪幾款？</span>
+        <span class="a">共 <button class="k">16</button> 款。常考：第 3 款不可預見之緊急事故、第 4 款後續維修零配件相容性、第 6 款<button class="k">追加契約以外工程未逾原主契約金額 50%</button>、第 7 款<button class="k">原招標公告已敘明之後續擴充</button>、第 9 款公開客觀評選優勝之專業／技術／資訊／社福服務。</span>
+      </li>
+      <li>
+        <span class="q">§26 技術規格的訂定原則？可否指定商標或型號？</span>
+        <span class="a">應依<button class="k">功能或效益</button>訂定；有國際標準或國家標準者應從其規定；技術規格在<button class="k">目的及效果上均不得限制競爭</button>；不得要求或提及特定商標、專利、型式、來源地，<i>但無法以精確之文字說明，且於招標文件註明「<button class="k">或同等品</button>」字樣者，不在此限</i>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">§4 · §12 · §13 · §15 · §36 · §87 · §92 · §98</span>短背高 CP 值<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <ul class="qa">
+      <li>
+        <span class="q">§4 法人團體接受補助辦理採購，何時適用本法？</span>
+        <span class="a">須<button class="k">補助金額占採購金額半數以上，且補助金額在公告金額以上</button>者，適用本法並受該機關之監督（112 年高員三級整題考，給兩組數字要你判斷）。</span>
+      </li>
+      <li>
+        <span class="q">§12、§13 兩種監辦的門檻與層級？</span>
+        <span class="a"><button class="k">查核金額</button>以上 → 開標、比價、議價、決標及驗收應報<button class="k">上級機關派員監辦</button>；<button class="k">公告金額</button>以上 → 應由<button class="k">主（會）計及有關單位會同監辦</button>。</span>
+      </li>
+      <li>
+        <span class="q">§15 利益迴避的三組數字？</span>
+        <span class="a">承辦、監辦採購人員<button class="k">離職後 3 年內</button>不得為本人或代理廠商向原任職機關接洽處理<button class="k">離職前 5 年內</button>與職務有關之事務；機關人員涉及本人、配偶、<button class="k">二親等以內</button>親屬或共同生活家屬之利益時應行迴避。</span>
+      </li>
+      <li>
+        <span class="q">§36 廠商資格分幾種？特定資格用於何種採購？</span>
+        <span class="a">基本資格（依實際需要訂定）與<button class="k">特定資格</button>；特定資格用於<i>特殊或巨額</i>採購，要求具相當經驗、實績、人力、財力、設備等。</span>
+      </li>
+      <li>
+        <span class="q">§87 各種妨害採購行為的刑度？</span>
+        <span class="a">強暴、脅迫、藥劑、催眠術使不為投標 → <button class="k">1–7 年</button>；施詐術使開標發生不正確結果 → <button class="k">5 年以下</button>；圍標（意圖影響決標價格或獲取不當利益而合意不為投標或不為價格競爭）→ <button class="k">6 月–5 年</button>；借牌／容許借牌投標 → <button class="k">3 年以下</button>。§92：廠商之代表人、代理人、受僱人犯罪者，<button class="k">併罰廠商</button>。</span>
+      </li>
+      <li>
+        <span class="q">§98 進用身心障礙者及原住民的規定？</span>
+        <span class="a">得標廠商國內員工總人數<button class="k">逾 100 人</button>者，履約期間僱用身心障礙者及原住民人數<button class="k">不得低於總人數 2%</button>，不足者應繳納<button class="k">代金</button>，並不得僱用外籍勞工取代不足額部分。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="num" data-nav="數字">
+  <p class="sec-label">03 / 給分點</p>
+  <h2>數字速記</h2>
+  <p class="lede">申論題的給分點大量落在日數、比率、次數、家數與金額門檻。切「只遮數字」模式，把右欄蓋起來對答；考前一晚只看這一節。</p>
+
+  <div class="scroll">
+    <table>
+      <caption>金額級距（工程會公告，非法條）</caption>
+      <tbody>
+        <tr><td>公告金額</td><td><button class="k">150 萬</button></td></tr>
+        <tr><td>查核金額</td><td>工程、財物 <button class="k">5,000 萬</button>／勞務 <button class="k">1,000 萬</button></td></tr>
+        <tr><td>巨額採購</td><td>工程 <button class="k">2 億</button>／財物 <button class="k">1 億</button>／勞務 <button class="k">2,000 萬</button></td></tr>
+        <tr><td>小額採購</td><td>公告金額十分之一＝<button class="k">15 萬</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <caption>爭議處理日數</caption>
+      <tbody>
+        <tr><td>異議：對招標文件</td><td><button class="k">等標期 1/4</button>，不得少於 <button class="k">10 日</button></td></tr>
+        <tr><td>異議：對釋疑／過程結果</td><td>各 <button class="k">10 日</button>；至遲不逾決標日次日起 <button class="k">15 日</button></td></tr>
+        <tr><td>機關處理異議</td><td><button class="k">15 日</button>內</td></tr>
+        <tr><td>提起申訴</td><td><button class="k">15 日</button>內</td></tr>
+        <tr><td>機關向申訴會陳述意見</td><td><button class="k">10 日</button>內</td></tr>
+        <tr><td>申訴會審議</td><td><button class="k">40 日</button>＋得延長 <button class="k">40 日</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <caption>次數、比率與年限</caption>
+      <tbody>
+        <tr><td>比減價格</td><td>減價一次後，比減<button class="k">不逾 3 次</button></td></tr>
+        <tr><td>超底價決標</td><td><button class="k">不得超過底價 8%</button>；查核金額以上超過 <button class="k">4%</button> 應先報上級機關核准</td></tr>
+        <tr><td>最有利標綜合評選</td><td><button class="k">不得逾 3 次</button></td></tr>
+        <tr><td>開標家數</td><td><button class="k">3 家</button>以上；第二次招標得不受限制</td></tr>
+        <tr><td>停權年限</td><td><button class="k">3 年</button>／<button class="k">1 年</button>／遞增 <button class="k">3 個月 → 6 個月 → 1 年</button></td></tr>
+        <tr><td>押標金追繳時效</td><td><button class="k">5 年</button>不行使消滅；逾 <button class="k">15 年</button>不得行使</td></tr>
+        <tr><td>利益迴避</td><td>離職後 <button class="k">3 年</button>內／離職前 <button class="k">5 年</button>內／<button class="k">二親等</button>以內</td></tr>
+        <tr><td>身障與原住民僱用</td><td>員工逾 <button class="k">100 人</button>，不低於 <button class="k">2%</button></td></tr>
+        <tr><td>共同投標家數</td><td>依《共同投標辦法》以<button class="k">不逾 5 家</button>為原則</td></tr>
+        <tr><td>限制性招標第 6 款</td><td>追加金額未逾原主契約 <button class="k">50%</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tip">金額級距是<b>工程會公告</b>而非法條所定，考前務必再確認一次現行數額；其餘為法條明定，不會變動。</p>
+</section>
+
+<section id="flow" data-nav="框架">
+  <p class="sec-label">04 / 實例題</p>
+  <h2>七步答題框架</h2>
+  <p class="lede">給案例事實問「機關應如何處置」時，照這個順序寫。借牌圍標案（114、112、111 年反覆出現）用這套幾乎可以全拿。順序即答題順序，不要跳。</p>
+  <ol class="flow">
+    <li><b>認定事實該當哪一款</b>——先把案例事實對到條號款次，這是後面每一步的前提。</li>
+    <li><b>押標金</b>——§31 不予發還／追繳，注意 5 年時效。</li>
+    <li><b>招標階段效果</b>——§50 不予決標；決標後發現則撤銷決標、終止或解除契約。</li>
+    <li><b>停權</b>——§101 哪一款、是否須情節重大、§103 停權幾年。</li>
+    <li><b>程序</b>——通知前給予陳述意見、成立採購工作及審查小組、通知附記、刊登政府採購公報。</li>
+    <li><b>刑責</b>——§87 借牌 3 年以下、圍標 6 月–5 年；§92 併罰廠商。</li>
+    <li><b>廠商救濟</b>——異議 → 申訴；提醒 §31 押標金爭議不受公告金額以上之限制。</li>
+  </ol>
+</section>
+
+<section id="rules" data-nav="規律">
+  <p class="sec-label">05 / 情報</p>
+  <h2>命題規律</h2>
+  <p class="lede">比背條文更值錢的四件事。</p>
+  <ul class="rules">
+    <li>
+      <h4>跨考別的題目全部可以拿來練</h4>
+      司法特考「檢察事務官營繕工程組」與調查特考「營繕工程組」的政府採購法是<b>同一份考卷</b>（112、113、114 年逐字相同）。每年實際上只有 2–3 套新題。
+    </li>
+    <li>
+      <h4>條文程序題才是主力，實例題只是配菜</h4>
+      307 題逐題分類實測：條文程序型 <b>37.5%</b>（最大宗）／救濟途徑型 15.3%／名詞定義型 10.7%／實例處置型 4.2%（但 110–114 年三等卷約占三分之一）／學理見解型 2.9%。基本盤仍是把要件、款次、程序、核准層級背到能默寫。
+    </li>
+    <li>
+      <h4>原題會重出</h4>
+      114 年司法／調查第 1 題「底價編列依據及核定程序」＝ 112 年升官等第 1 題；111 年員級第 3 題借牌押標金 ≈ 114 年升官等第 1 題。<b>歷屆一定要親手寫過，不能只看。</b>
+    </li>
+    <li>
+      <h4>數字一定要寫進答案</h4>
+      給分點大量落在日數、比率、次數、家數與金額門檻。條文背得再熟，數字沒寫出來就是拿不到那一格分數。
+    </li>
+  </ul>
+</section>
+
+<section id="order" data-nav="順序">
+  <p class="sec-label">06 / 排程</p>
+  <h2>時間有限時的讀法</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>順序</th><th>內容</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>§101、§103、§31、§50</td><td>命中率最高，且互相串聯，一題可通吃</td></tr>
+        <tr><td>2</td><td>§74–§78、§85-1 全套日數</td><td>第一名主題，且是純記憶</td></tr>
+        <tr><td>3</td><td>§46、§47、§53、§54、§58</td><td>近年重複出題最明顯的區塊</td></tr>
+        <tr><td>4</td><td>§48 三家＋8 款例外</td><td>113、114 連兩年</td></tr>
+        <tr><td>5</td><td>§71、§72 驗收與減價收受</td><td>各等別都愛考</td></tr>
+        <tr><td>6</td><td>§18、§20、§22、§26 招標方式</td><td>名詞解釋與送分題</td></tr>
+        <tr><td>7</td><td>§65–§67 轉包分包</td><td>實例題常見配菜</td></tr>
+        <tr><td>8</td><td>§4、§12、§13、§15、§36、§87、§98</td><td>短背高 CP</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- /採購法 -->
+
+<div class="subject" data-sub="bm" data-name="企業管理">
+<ul class="subfacts">
+  <li class="hi">全申論 4 題 × 25 分</li>
+  <li>120 分鐘</li>
+  <li>交通事業共用科目：可練考卷 5 份</li>
+  <li>統計基礎：歷屆 72 題</li>
+</ul>
+
+<section data-nav="頻率">
+  <p class="sec-label">01 / 先讀哪裡</p>
+  <h2>出題頻率排行</h2>
+  <p class="lede">交通事業升資考「員級晉高員級」20 題的主題命中率。一題可命中多個主題。</p>
+  <ul class="freq">
+    <li><span class="name">規劃、目標與決策</span><span class="pct">30.0%</span><span class="track"><span class="fill" style="width:100%"></span></span></li>
+    <li><span class="name">企業倫理、CSR、ESG、利害關係人</span><span class="pct">20.0%</span><span class="track"><span class="fill" style="width:67%"></span></span></li>
+    <li><span class="name">國際企業與全球化</span><span class="pct">15.0%</span><span class="track"><span class="fill" style="width:50%"></span></span></li>
+    <li><span class="name">行銷管理</span><span class="pct">15.0%</span><span class="track"><span class="fill" style="width:50%"></span></span></li>
+    <li><span class="name">創新、科技與數位轉型</span><span class="pct">15.0%</span><span class="track"><span class="fill" style="width:50%"></span></span></li>
+    <li><span class="name">組織設計與結構</span><span class="pct">10.0%</span><span class="track"><span class="fill" style="width:33%"></span></span></li>
+    <li><span class="name">公司治理</span><span class="pct">10.0%</span><span class="track"><span class="fill" style="width:33%"></span></span></li>
+    <li><span class="name">激勵理論</span><span class="pct">10.0%</span><span class="track"><span class="fill" style="width:33%"></span></span></li>
+    <li><span class="name">策略分析工具（SWOT／五力／鑽石／3C）</span><span class="pct">10.0%</span><span class="track"><span class="fill" style="width:33%"></span></span></li>
+    <li><span class="name">控制功能與績效評估</span><span class="pct">10.0%</span><span class="track"><span class="fill" style="width:33%"></span></span></li>
+  </ul>
+  <p class="subfreq">
+    全部 72 題（含佐級與鐵路特考）：規劃目標決策 18.1%｜激勵理論 13.9%｜<b>企業倫理 CSR ESG 11.1%</b>｜國際企業 11.1%｜組織設計 9.7%｜策略工具 9.7%｜行銷 8.3%｜創新科技 8.3%｜控制 8.3%。
+    <b>創新科技與數位轉型三題全部集中在 114 年</b>——這是新增的軸線。
+  </p>
+</section>
+
+<section data-nav="必背">
+  <p class="sec-label">02 / 觀念</p>
+  <h2>必背觀念</h2>
+  <p class="lede">命題集中在管理學主幹章節（Robbins 架構）。按上方「遮答案」逐題自測。</p>
+
+  <div class="card">
+    <h3><span class="art">倫理 · CSR</span>企業社會責任<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">最穩定主軸，109、111、112 連續出題，112 年一卷兩題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂企業社會責任（CSR）？</span>
+        <span class="a">指企業於追求股東利潤之外，<i>主動承擔對社會與環境之責任</i>，在決策中納入<i>利害關係人</i>之利益，並以合乎倫理之方式經營，以促進社會長期福祉。</span>
+      </li>
+      <li>
+        <span class="q">社會義務、社會回應、社會責任三者如何區別？（112 年整題考）</span>
+        <span class="a">
+          <span class="sub"><i>社會義務</i>：僅履行<button class="k">經濟與法律</button>之最低要求，由<button class="k">法律</button>引導，<button class="k">被動</button>、當期，屬<button class="k">古典觀點</button>（Friedman）。</span>
+          <span class="sub"><i>社會回應</i>：因應<button class="k">社會普遍需求或壓力</button>而行動，由<button class="k">社會規範</button>引導，<button class="k">反應性</button>、中短期。</span>
+          <span class="sub"><i>社會責任</i>：<button class="k">超越法律與經濟要求，主動追求對社會有益之長期目標</button>，由<button class="k">倫理準則</button>引導，<button class="k">主動</button>、長期，屬<button class="k">社會經濟觀點</button>。</span>
+          <span class="sub">強度：社會義務 &lt; 社會回應 &lt; 社會責任，且三者為<i>遞進關係</i>——負社會責任者必然守法獲利並回應社會需求。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">Carroll 金字塔模型由下而上是哪四層？</span>
+        <span class="a"><button class="k">經濟責任</button>（獲利，基礎）→ <button class="k">法律責任</button>（守法）→ <button class="k">倫理責任</button>（合乎社會期待之公平正當）→ <button class="k">慈善責任</button>（回饋社會、公益）。</span>
+      </li>
+      <li>
+        <span class="q">企業貫徹社會責任的具體措施有哪些？</span>
+        <span class="a">①建立制度與治理機制（CSR 守則、永續發展委員會、<i>吹哨者保護</i>）②編製並揭露<i>永續報告書</i>（GRI／SASB，第三方確信）③環境面：溫室氣體盤查與減量（SBTi）、循環經濟、ISO 14001 ④社會面：ISO 45001、供應鏈人權查核、通用設計、社區參與 ⑤治理面：董事會獨立性與多元性、誠信經營反貪腐 ⑥納入<i>平衡計分卡</i>與高階薪酬 ⑦<i>利害關係人議合</i>與重大性分析 ⑧倫理訓練與 tone at the top。</span>
+      </li>
+      <li>
+        <span class="q">CSR 的贊成與反對意見各為何？（111 年考點）</span>
+        <span class="a">
+          <span class="sub"><i>贊成（社會經濟觀點）</i>：符合公眾期望、長期利潤更佳、企業具資源與能力、預防勝於治療（可避免政府管制）、有助形象與攬才、<button class="k">擁有權力即應負責任（Davis 責任鐵律）</button>。</span>
+          <span class="sub"><i>反對（古典觀點）</i>：違反<button class="k">利潤極大化</button>、稀釋企業目的、增加成本轉嫁消費者、企業取得過多社會權力、<button class="k">經理人缺乏處理社會問題之專業</button>、缺乏明確課責對象。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">ESG 趨勢下，領導者應如何因應？</span>
+        <span class="a">將 ESG 納入<i>核心策略</i>而非公關活動；設定科學基礎減碳目標；建立董事會層級之永續治理架構；編製符合 GRI／SASB 之報告書並取得第三方確信；供應鏈 ESG 查核；利害關係人議合與重大性分析；ESG 指標納入 KPI 與高階薪酬；資訊透明並防範<button class="k">漂綠（greenwashing）</button>。</span>
+      </li>
+    </ul>
+    <p class="tip">臺鐵公司化後 ESG 揭露成為法定義務，<b>115 年出這條線的誘因更強</b>。答題時把臺鐵的安全、無障礙、偏遠路線 PSO、減碳寫進應用段，是拉分關鍵。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">倫理 · 決策</span>道德決策四種觀點<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第一題整題（25 分）</p>
+    <ul class="qa">
+      <li>
+        <span class="q">道德決策的四種觀點分別是什麼？各自的核心主張？</span>
+        <span class="a">
+          <span class="sub"><i>功利主義觀點</i>：以<button class="k">最大多數人之最大利益</button>為依歸，重視<button class="k">結果</button>。</span>
+          <span class="sub"><i>權利觀點</i>：<button class="k">尊重並保障個人基本權利與自由</button>（生命、隱私、良知、言論、正當程序）。</span>
+          <span class="sub"><i>正義觀點</i>：<button class="k">公正、公平、無偏私</button>地執行規則（分配正義、程序正義、互動正義）。</span>
+          <span class="sub"><i>整合社會契約觀點</i>：結合<button class="k">實證與規範</button>，以既有社會契約與產業慣例為基礎，並受<button class="k">普世倫理準則（hypernorms）</button>約束。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">四種觀點的判斷基準有何差異？各有何優缺點？</span>
+        <span class="a">功利主義看<i>結果</i>——有效率可量化，但可能犧牲少數人權益；權利與正義觀點看<i>手段與過程</i>——權利觀保障個人自由但可能妨礙效率，正義觀增進信任但可能降低創新誘因；整合社會契約觀點看<i>脈絡與共識</i>——兼顧文化差異，但難界定普世準則、可能為當地陋習背書。</span>
+      </li>
+      <li>
+        <span class="q">實務上應如何整合這四種觀點？</span>
+        <span class="a">四者<i>非互斥而應併用</i>，以多重檢核為之：先問「結果對整體是否有利」（功利）→ 再問「是否侵害任何人基本權利」（權利）→ 再問「規則適用與利益分配是否公平」（正義）→ 最後問「在此文化與產業脈絡下是否可被接受、且未違反普世底線」（社會契約）。輔助檢驗：<i>曝光（見報）測試、換位思考、榜樣測試</i>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">規劃 · 目標</span>目標設定與決策<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">命中率第一名 30%，114、112、111、110 連年出題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">SMART 目標設定法五個字母各代表什麼？</span>
+        <span class="a"><button class="k">S</button>pecific 具體明確、<button class="k">M</button>easurable 可衡量、<button class="k">A</button>chievable 可達成（具挑戰但非不可能）、<button class="k">R</button>elevant 與組織策略相關、<button class="k">T</button>ime-bound 有明確期限。</span>
+      </li>
+      <li>
+        <span class="q">目標設定理論（Locke &amp; Latham）的核心命題？</span>
+        <span class="a">①<i>具體</i>目標優於「盡力而為」②<i>困難但可達成</i>之目標產生較高績效 ③<button class="k">目標承諾</button>是必要條件（參與設定、公開承諾、主管支持可提高）④<button class="k">回饋</button>強化效果，尤以自我產生之回饋為佳 ⑤<button class="k">自我效能</button>愈高愈能接受困難目標 ⑥調節變項：任務複雜度、目標導向、國家文化。</span>
+      </li>
+      <li>
+        <span class="q">目標管理在公部門應用有何困難？</span>
+        <span class="a">目標多元且模糊（公共利益不易量化）、多重委託人與相互衝突之期望、產出不易衡量、缺乏市場價格訊號、獎酬彈性受限，並須避免<button class="k">目標錯置</button>（為衝指標而扭曲行為，如為準點率而甩站）。</span>
+      </li>
+      <li>
+        <span class="q">如何克服？（作答的建議段）</span>
+        <span class="a">以 <button class="k">MBO</button> 上下共同設定目標並串連組織策略；採<button class="k">平衡計分卡</button>兼顧財務、顧客、內部流程、學習成長四構面，避免單一指標偏廢；指標須符合 SMART；<i>安全類指標設為門檻</i>；提供及時回饋與資源支持；以表揚與職涯發展等非金錢誘因補強獎酬限制。</span>
+      </li>
+      <li>
+        <span class="q">114 年「假設你是某公司業務經理，為業務增長設立具體目標」——怎麼答？</span>
+        <span class="a">務必<i>真的寫出一組 SMART 目標</i>，不能只寫定義。例：「於 115 年 12 月 31 日前，將○○航線貨櫃承攬量由每月 1 萬 TEU 提升至 1.2 萬 TEU（成長 20%），由業務部負責，每月檢視進度。」再說明執行：目標分解（部門→個人）、資源配置、里程碑與定期檢討、KPI 與獎酬連結、回饋機制、風險與備案。</span>
+      </li>
+    </ul>
+    <p class="tip"><b>114 年整卷轉向情境應用題</b>——四題有兩題是「假設你是⋯⋯」。只會背名詞定義的人拿不到高分，一定要寫出具體方案並說明理由。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">組織</span>組織設計與學習型組織<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第二題、114 年第四題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">三種傳統組織設計的內涵與優缺點？</span>
+        <span class="a">
+          <span class="sub"><i>簡單結構</i>：低部門化、控制幅度大、職權集中於一人。優＝快速、彈性、成本低；缺＝<button class="k">過度依賴一人</button>、規模成長後決策瓶頸。</span>
+          <span class="sub"><i>功能式（職能式）</i>：依相同專業歸類部門。優＝<button class="k">專業分工形成規模經濟</button>、技能深化；缺＝<button class="k">本位主義（穀倉效應）</button>、協調困難、反應慢、無人對整體績效負責。</span>
+          <span class="sub"><i>事業部式</i>：依產品、顧客、地區劃分半自主事業部，自負損益。優＝<button class="k">專注成果</button>、責任明確、便於績效衡量、培養通才；缺＝<button class="k">活動與資源重複配置</button>、成本較高、事業部間競爭資源。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">學習型組織的內涵？五項修練是什麼？</span>
+        <span class="a">由 <button class="k">Peter Senge</button>《第五項修練》提出，指組織已發展出<i>持續學習、調適與改變之能力</i>；它不是一種結構，而是一種<i>心態與能力</i>。五項修練：<button class="k">系統思考</button>（第五項，整合其餘四項）、<button class="k">自我超越</button>、<button class="k">改善心智模式</button>、<button class="k">建立共同願景</button>、<button class="k">團隊學習</button>。</span>
+      </li>
+      <li>
+        <span class="q">學習型組織有哪些特性？</span>
+        <span class="a">①<i>組織設計</i>：無邊界、跨功能團隊、扁平化、授權賦能 ②<i>資訊分享</i>：開放即時流通，不以資訊作為權力來源 ③<i>領導</i>：領導者為<button class="k">設計師、僕人與教師</button> ④<i>文化</i>：共同願景與社群意識、相互信任、<button class="k">容許犯錯並從錯誤中學習</button>（心理安全感）。</span>
+      </li>
+      <li>
+        <span class="q">為快速擴張且將推新產品的公司設計組織結構，該怎麼答？</span>
+        <span class="a">須<i>明確選一個並說理</i>。建議採<button class="k">矩陣型</button>或「職能為主＋新產品事業部／專案團隊」之<button class="k">混合式</button>——保留職能部門之專業規模經濟，又賦予新產品獨立損益責任與跨功能團隊以加速上市。配套：界定雙重報告之權責、專案經理職權、衝突解決機制、資訊與績效制度配合、階段性檢討。</span>
+      </li>
+      <li>
+        <span class="q">組織結構應依什麼調整？</span>
+        <span class="a">依<button class="k">策略、規模、技術與環境</button>權變調整；Chandler 名言：<button class="k">結構追隨策略</button>。傳統設計追求效率與控制（機械式），學習型組織追求適應與創新（有機式）；環境愈動盪，後者愈具優勢。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">治理</span>公司治理<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109、111 年出題；國營事業特殊性是拉分段落</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂公司治理？其理論基礎為何？</span>
+        <span class="a">指用以<i>指揮與控制公司</i>之制度架構，藉權責分配與監督制衡，確保經營者以股東及利害關係人之最佳利益行事。理論基礎為<button class="k">代理問題</button>——所有權與經營權分離，經營者與股東目標不一致且資訊不對稱，產生<button class="k">道德風險</button>與<button class="k">逆選擇</button>；另有大股東與小股東間之<i>第二類代理問題</i>。</span>
+      </li>
+      <li>
+        <span class="q">公司治理的內部機制有哪些？</span>
+        <span class="a">①<button class="k">董事會</button>（核心，須具獨立性與多元性，下設審計、薪酬、提名、永續發展委員會）②監察人／<button class="k">審計委員會</button> ③股東會（電子投票、少數股東權）④內部控制與<button class="k">內部稽核</button>（直接對董事會負責）⑤薪酬設計（股票選擇權、遞延獎金、<button class="k">追回條款 clawback</button>）⑥資訊揭露與透明度 ⑦誠信經營與吹哨者保護。</span>
+      </li>
+      <li>
+        <span class="q">外部機制有哪些？</span>
+        <span class="a">①法規與主管機關監理（公司法、證交法、公司治理評鑑）②<button class="k">外部審計</button>與會計師獨立性 ③資本市場紀律——股價、<button class="k">公司控制權市場（併購威脅）</button>、機構投資人<button class="k">盡職治理</button>、股東行動主義 ④債權人透過契約條款（covenants）監督 ⑤經理人市場與聲譽機制 ⑥媒體與社會監督。</span>
+      </li>
+      <li>
+        <span class="q">國營事業的公司治理有何特殊性？（拉分段落）</span>
+        <span class="a">①<button class="k">股東單一且為政府</button>，缺乏股價紀律與併購威脅，外部機制大幅弱化 ②<button class="k">多重目標</button>：政策任務與商業績效衝突 ③<button class="k">多重委託人</button>：行政院、交通部、立法院、審計部、監察院、社會大眾，形成多頭監督 ④人事與薪酬受國營事業法規拘束 ⑤採購財務仍受政府採購法、預算法、審計法拘束。改進方向：區分商業與政策業務並以 <button class="k">PSO 契約</button>補償、董事會專業獨立與績效問責、KPI 與資訊透明、落實 ESG 揭露。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">國際</span>國際企業與全球化<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109、110、112 年出題，15%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">全球環境的經濟障礙有哪些？（109 年第一題）</span>
+        <span class="a">①<button class="k">關稅障礙</button>（從價、從量、複合稅；反傾銷稅、平衡稅）②<button class="k">非關稅障礙</button>：配額、進口許可與通關刁難、<button class="k">技術性貿易障礙 TBT</button>、<button class="k">食品衛生檢驗與動植物檢疫 SPS</button>、當地成分要求、政府採購國內優先、補貼與傾銷 ③<button class="k">匯率與外匯管制</button>（限制利潤匯出）④經濟發展程度與市場規模差異（<button class="k">購買力平價 PPP</button>）⑤基礎建設不足 ⑥總體經濟不穩定與<button class="k">國家風險</button> ⑦區域經濟整合之<button class="k">貿易移轉效果</button>（RCEP、CPTPP）⑧要素市場障礙 ⑨產業政策與市場准入限制。</span>
+      </li>
+      <li>
+        <span class="q">Hofstede 跨文化模型的五個構面？</span>
+        <span class="a"><button class="k">權力距離</button>、<button class="k">個人主義／集體主義</button>、<button class="k">陽剛／陰柔</button>、<button class="k">不確定性規避</button>、<button class="k">長期／短期導向</button>（又稱儒家動力）。第六構面為<i>放縱／節制</i>，可作補充。</span>
+      </li>
+      <li>
+        <span class="q">各構面的管理意涵？</span>
+        <span class="a">高權力距離宜採<i>指導式領導</i>與明確階層；低權力距離宜授權扁平。個人主義宜<i>個人績效考核與獎酬</i>；集體主義宜<i>團隊獎酬</i>並顧及面子。陽剛文化以績效競賽與金錢激勵；陰柔文化以工作生活平衡與人際氛圍激勵。高不確定性規避需<i>明確規章與 SOP</i>、變革須漸進；低者適合彈性創新。長期導向可接受<i>延遲報酬與長期投資</i>；短期導向重視即時成果與短週期目標。</span>
+      </li>
+      <li>
+        <span class="q">Hofstede 模型有何限制與批評？（加分段）</span>
+        <span class="a">資料取自單一公司（IBM）且年代久遠；以<i>國家</i>為單位忽略國內次文化差異；有<button class="k">生態謬誤</button>（以國家平均推論個人）之風險；文化會隨時間變遷。應與 <button class="k">GLOBE 研究</button>、Trompenaars 模型併用。</span>
+      </li>
+      <li>
+        <span class="q">Dunning 的 OLI 折衷理論？</span>
+        <span class="a">①<button class="k">所有權優勢 Ownership</button>：企業獨有之技術、品牌、管理能力 ②<button class="k">區位優勢 Location</button>：地主國之市場、要素成本、政策優惠 ③<button class="k">內部化優勢 Internalization</button>：自行經營優於授權或出口。<i>三者同時具備才選擇 FDI</i>；僅有 O 傾向授權，O＋I 傾向出口。FDI 四動機：資源尋求、市場尋求、效率尋求、<button class="k">策略性資產尋求</button>。</span>
+      </li>
+      <li>
+        <span class="q">Porter 鑽石模型的四大要素？分析對象是什麼？</span>
+        <span class="a">分析對象是<button class="k">國家（或區域）之特定產業</button>為何具國際競爭力，<i>非單一企業</i>。四要素：①<button class="k">生產要素條件</button>（高級要素如專業人力、研發能力才是持久優勢）②<button class="k">需求條件</button>（本國市場規模與<i>內行且挑剔的顧客</i>）③<button class="k">相關與支援產業</button>（群聚 cluster）④<button class="k">企業策略、結構與同業競爭</button>。外生變數：<button class="k">機會</button>與<button class="k">政府</button>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">行銷</span>行銷管理<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109、110、114 年出題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">行銷管理程序分為哪些步驟？（109 年第二題）</span>
+        <span class="a">Kotler 之<i>分析、規劃、執行與控制</i>循環：①<button class="k">分析行銷機會</button>（PEST／PESTEL、五力分析、顧客分析、內部資源，綜合為 SWOT）②<button class="k">選擇目標市場 STP</button> ③<button class="k">發展行銷組合 4P／7P</button> ④<button class="k">管理行銷努力</button>（規劃、組織執行、行銷控制）。</span>
+      </li>
+      <li>
+        <span class="q">STP 與 STDP 有何不同？各步驟內容？</span>
+        <span class="a">STDP＝<button class="k">Segmentation → Targeting → Differentiation → Positioning</button>，比 STP 多拉出「差異化」為獨立步驟。區隔依地理／人口／心理／行為變數；目標市場評估規模成長、結構吸引力與資源契合，採<i>無差異／差異化／集中化</i>；差異化以產品、服務、人員、通路、形象創造差異；定位撰寫定位聲明並以<button class="k">知覺圖</button>檢核。</span>
+      </li>
+      <li>
+        <span class="q">有效市場區隔須具備哪五個條件？</span>
+        <span class="a"><button class="k">可衡量性、足量性、可接近性、可區別性、可行動性</button>。</span>
+      </li>
+      <li>
+        <span class="q">行銷組合 4P 與服務業的 7P？</span>
+        <span class="a">4P：<button class="k">產品、價格、通路、推廣</button>。服務業另加 3P：<button class="k">人員 People、實體設施 Physical Evidence、流程 Process</button>。</span>
+      </li>
+      <li>
+        <span class="q">運輸服務業有哪四大特性？行銷上如何因應？</span>
+        <span class="a"><button class="k">無形性、不可分割性、易變性、不可儲存性</button>。因應：以服務品質與可靠度定位；以<i>差別定價與定期票（TPASS）</i>管理尖離峰；以實體設施（車站、車廂）與人員服務彌補無形性；以顧客關係管理與會員經營提高黏著度。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">控制 · 變革</span>控制功能與組織變革<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">110、111、114 年出題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">控制程序的三個步驟？</span>
+        <span class="a">①<button class="k">衡量實際績效</button>（個人觀察、統計報告、口頭與書面報告）②<button class="k">與標準比較</button>（界定可接受之變異範圍）③<button class="k">採取管理行動</button>（不作為／矯正實際績效／修正標準）。</span>
+      </li>
+      <li>
+        <span class="q">事前、即時、事後控制的差別？各舉例。</span>
+        <span class="a">
+          <span class="sub"><button class="k">事前控制 Feedforward</button>：問題發生<i>前</i>預防。例：可行性審查、人員資格審查、材料進場檢驗、預算審核。最理想但需準確預測。</span>
+          <span class="sub"><button class="k">即時控制 Concurrent</button>：進行<i>中</i>修正。例：走動管理、進度即時儀表板、施工中查驗。</span>
+          <span class="sub"><button class="k">事後控制 Feedback</button>：完成<i>後</i>檢討。例：驗收、決算、績效評估、結案報告。優點是提供有意義之績效資訊並增強動機，缺點是損害已造成。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">Lewin 變革三階段？如何運用於數位轉型？</span>
+        <span class="a"><button class="k">解凍 Unfreeze</button>：創造急迫感、溝通願景、揭露現況缺口，運用<button class="k">力場分析</button>（<i>減少抗拒力比增強驅動力更有效</i>）→ <button class="k">變革 Change</button>：導入新系統與流程、教育訓練、試點推廣、變革推動小組、取得<button class="k">短期勝利 quick wins</button> → <button class="k">再凍結 Refreeze</button>：修訂 SOP、調整績效考核與獎酬以支持新行為、納入新人訓練、以文化與領導行為強化。可補充 <i>Kotter 八步驟</i>對照加分。</span>
+      </li>
+      <li>
+        <span class="q">員工抗拒變革的來源？如何促使員工支持？</span>
+        <span class="a">抗拒來源：<button class="k">不確定性、習慣、對個人損失之擔憂（地位、技能過時）、認為變革不利組織</button>。促成方法：溝通與教育、參與及投入、協助與支持（訓練、心理支持）、協商與利益交換、必要時之操縱吸納與強制（<i>最後手段</i>）。</span>
+      </li>
+      <li>
+        <span class="q">何謂文化控制？Schein 的組織文化三層次？</span>
+        <span class="a">文化控制以<i>共享價值觀、規範與信念</i>引導行為，屬<button class="k">非正式控制</button>，相對於官僚控制（規章、階層、預算）與市場控制（價格、利潤中心）。三層次：①<button class="k">人造物 Artifacts</button>（可見表象：空間、服裝、儀式、標語）②<button class="k">信奉之價值觀 Espoused Values</button>（願景、使命、行為準則）③<button class="k">基本潛在假定</button>（視為理所當然、最難改變，是文化核心）。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">激勵 · 薪酬</span>薪酬設計與激勵<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">111、114 年出題；公營事業限制是必寫段落</p>
+    <ul class="qa">
+      <li>
+        <span class="q">薪酬有哪些種類？</span>
+        <span class="a"><button class="k">直接薪酬</button>（本薪、加給、獎金、佣金、分紅）＋<button class="k">間接薪酬／福利</button>（保險、退休金、休假、教育訓練、彈性工時、員工協助方案）。</span>
+      </li>
+      <li>
+        <span class="q">技術基礎薪酬與變動薪酬各是什麼？</span>
+        <span class="a"><button class="k">技術基礎薪酬</button>：依員工<i>所具備之技能種類與數量</i>（而非職位）給薪，鼓勵多能工與持續學習；缺點是技能認證成本、技能未必用得上。<button class="k">變動薪酬</button>：薪酬一部分隨個人、團隊或組織績效浮動，強化績效與報酬之連結（期望理論之<i>工具性</i>）。</span>
+      </li>
+      <li>
+        <span class="q">公營事業受薪資管制，如何吸引優質員工？</span>
+        <span class="a">強化<i>非金錢誘因</i>：工作保障與穩定、完善退休與福利、清楚之職涯與升遷路徑（<button class="k">升資考本身即制度化之職涯階梯</button>）、教育訓練與進修補助、工作意義感與公共服務價值、工作生活平衡、友善職場、內部創新獎勵與表揚制度；並在容許範圍內導入績效獎金與團隊獎勵。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section data-nav="規律">
+  <p class="sec-label">03 / 情報</p>
+  <h2>命題規律</h2>
+  <ul class="rules">
+    <li>
+      <h4>企業管理是所有交通事業升資考的共用科目</h4>
+      112 年鐵路升資考與港務升資考的企業管理是<b>同一份考卷</b>（3 類科同卷）。所以你可用的「員級晉高員級」卷不是只有鐵路 2 份，而是 <b>109 鐵路、110 公路、111 公路、112 鐵路＋港務、114 港務共 5 份</b>——三個專業科目中資料量最充足的一科。跨單位的卷子全部要練。
+    </li>
+    <li>
+      <h4>114 年整卷轉向情境應用題</h4>
+      109 年是純陳述（「請說明⋯⋯有那些」），112 年是陳述＋比較，<b>114 年四題有兩題是「假設你是⋯⋯」</b>，要你做決策並說明理由。只背名詞定義的人在那份卷子上拿不到高分。
+    </li>
+    <li>
+      <h4>企業倫理／CSR／ESG 是最穩定的主軸</h4>
+      109 考 CSR 與公司治理、111 考 CSR 正反意見與 ESG、112 一卷兩題（道德決策四觀點＋社會義務三分）。臺鐵公司化後 ESG 揭露成為法定義務，115 年出題誘因更強。
+    </li>
+    <li>
+      <h4>不考計算、不考冷僻理論</h4>
+      72 題中僅一題損益平衡計算。命題集中在管理學教科書主幹章節（規劃、組織、領導、控制＋策略、行銷、國際、倫理），多為 Robbins《管理學》標準架構。<b>把一本管理學讀熟比讀十本專書有效。</b>
+    </li>
+  </ul>
+</section>
+</div><!-- /企業管理 -->
+
+<div class="subject" data-sub="tr" data-name="運輸學">
+<ul class="subfacts">
+  <li class="hi">全申論 4 題 × 25 分</li>
+  <li>120 分鐘</li>
+  <li>你的卷只有 109、112 兩屆</li>
+  <li>跨考別 206 題可練</li>
+</ul>
+
+<section data-nav="頻率">
+  <p class="sec-label">01 / 先讀哪裡</p>
+  <h2>出題頻率排行</h2>
+  <p class="lede">跨考別全部 206 題（109～115 年）之主題命中率。鐵路升資考本身只有兩屆 16 題，樣本太小，須用跨考別資料判斷趨勢。</p>
+  <ul class="freq">
+    <li><span class="name">大眾運輸與公共運輸政策</span><span class="pct">18.0%</span><span class="track"><span class="fill" style="width:100%"></span></span></li>
+    <li><span class="name">鐵路技術與軌道系統</span><span class="pct">15.5%</span><span class="track"><span class="fill" style="width:86%"></span></span></li>
+    <li><span class="name">航空運輸</span><span class="pct">14.1%</span><span class="track"><span class="fill" style="width:78%"></span></span></li>
+    <li><span class="name">物流、貨運與供應鏈</span><span class="pct">11.2%</span><span class="track"><span class="fill" style="width:62%"></span></span></li>
+    <li><span class="name">運輸安全與事故管理</span><span class="pct">10.7%</span><span class="track"><span class="fill" style="width:59%"></span></span></li>
+    <li><span class="name">運輸管制、法規與組織</span><span class="pct">10.2%</span><span class="track"><span class="fill" style="width:57%"></span></span></li>
+    <li><span class="name">臺鐵公司化與鐵路事業經營</span><span class="pct">9.7%</span><span class="track"><span class="fill" style="width:54%"></span></span></li>
+    <li><span class="name">永續運輸、淨零減碳、氣候</span><span class="pct">9.7%</span><span class="track"><span class="fill" style="width:54%"></span></span></li>
+    <li><span class="name">票價、費率、定價與補貼</span><span class="pct">9.2%</span><span class="track"><span class="fill" style="width:51%"></span></span></li>
+    <li><span class="name">運輸需求、運量與彈性</span><span class="pct">8.3%</span><span class="track"><span class="fill" style="width:46%"></span></span></li>
+    <li><span class="name">智慧運輸、AI、數位轉型、MaaS</span><span class="pct">7.8%</span><span class="track"><span class="fill" style="width:43%"></span></span></li>
+  </ul>
+  <p class="subfreq">
+    近三年（113～115）74 題的<b>加速項目</b>：大眾運輸政策 20.3%｜鐵路技術 18.9%｜<b>運輸管制法規組織 13.5%</b>（由 10.2% 上升）｜物流貨運 12.2%｜<b>永續淨零 12.2%</b>｜運輸基本概念 10.8%（回歸基本題）｜臺鐵公司化 9.5%｜智慧運輸 AI 9.5%。
+  </p>
+</section>
+
+<section data-nav="必背">
+  <p class="sec-label">02 / 觀念</p>
+  <h2>必背觀念</h2>
+  <p class="lede">109 年是傳統運輸學，112 年四題全部是政策時事題。兩種都要準備。</p>
+
+  <div class="card">
+    <h3><span class="art">軌道技術</span>閉塞區間<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109 年第一題；鐵路技術為跨考別第 2 名主題 15.5%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂閉塞？閉塞區間？其作用為何？</span>
+        <span class="a">閉塞（Block）係鐵路行車保安之基本制度，指將路線劃分為若干區段，規定<button class="k">同一時間內同一區段僅容許一列車占用</button>，以防止追撞與正面衝突，該區段即為閉塞區間。閉塞制度並直接決定<button class="k">路線容量</button>（最小行車間隔）。</span>
+      </li>
+      <li>
+        <span class="q">閉塞的主要分類？</span>
+        <span class="a">
+          <span class="sub"><button class="k">固定閉塞</button>：區間長度固定，以軌道電路或計軸器偵測。再分為<i>非自動（人工）閉塞</i>——電話閉塞、<button class="k">電氣路牌</button>、電氣路籤、通券，多用於單線、支線或<button class="k">代用閉塞</button>；與<i>自動閉塞 ABS</i>——號誌機依前方占用自動變換現示，依現示數分<button class="k">二、三、四現示</button>，常與 ATP／ATS 及 CTC 併用。</span>
+          <span class="sub"><button class="k">移動閉塞</button>：不劃固定區間，依列車<i>即時位置、速度與煞車性能</i>動態計算安全間距，透過車地雙向連續無線通信（<button class="k">CBTC</button>）授予行車許可。</span>
+          <span class="sub"><button class="k">準（虛擬）移動閉塞</button>：仍以固定區間邊界為目標點，但行車許可可延伸至<i>前車實際所在區間之邊界</i>，例如 <button class="k">ETCS Level 2</button>。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">三種閉塞方式怎麼比較？（比較表要點）</span>
+        <span class="a">容量：人工最低、自動中等、<i>移動閉塞最高</i>；地面號誌：移動閉塞<button class="k">可省略（車內號誌）</button>；建置成本：移動閉塞最高；對通信可靠度依賴：移動閉塞<button class="k">極高</button>；人為疏失風險：人工最高；適用場合：人工用於單線支線與代用、自動用於一般幹線、CBTC 用於<button class="k">高密度都會捷運</button>。</span>
+      </li>
+      <li>
+        <span class="q">提升路線容量的手段有哪些？（結論段）</span>
+        <span class="a">除縮短閉塞區間外，尚須配合<button class="k">號誌現示數增加</button>、<button class="k">車輛加減速性能提升</button>與<button class="k">月台停站時間縮短</button>。臺鐵幹線以 <i>CTC 集中控制＋自動閉塞＋ATP</i> 為主；都會捷運因班距需求達 2～3 分鐘以下，多採 CBTC。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">臺鐵 · 法規</span>臺鐵公司化與鐵路法修正<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第一題；跨考別最熱的鐵路題，113、115 高考連續出</p>
+    <ul class="qa">
+      <li>
+        <span class="q">鐵路法為何修正？臺鐵何時改制？</span>
+        <span class="a">臺鐵長期虧損，短期債務與退撫潛藏負債龐大，單靠票箱收入難以改善。配合臺灣鐵路管理局於 <button class="k">112 年 1 月 1 日</button>改制為<button class="k">國營臺灣鐵路股份有限公司</button>，立法院於 111 年 5 月三讀、總統 111 年 6 月公布修正鐵路法，鬆綁不動產開發限制，使其「<i>運輸本業＋資產經營</i>」雙軌並行。</span>
+      </li>
+      <li>
+        <span class="q">鐵路法增訂第 21 條之 1 的核心規定？（最關鍵）</span>
+        <span class="a">
+          <span class="sub">Ⅰ 為經營鐵路業務所需使用<i>毗鄰公有不動產</i>，應辦理<button class="k">有償撥用或租用</button>，並須考量<button class="k">公益性</button>。</span>
+          <span class="sub">Ⅱ 報經<button class="k">交通部核准</button>，得辦理經管之國有不動產<i>開發、處分或收益</i>，<button class="k">不受國有財產法第 28 條之限制</button>；其中處分屬<i>出售或設定一定年期地上權</i>者，應先報經<button class="k">行政院核定</button>（雙重把關）。</span>
+          <span class="sub">Ⅳ 該不動產屬國營鐵路機構資產者，其收入得由該機構<button class="k">循環運用</button>——突破收入應繳庫之限制，是財務自主的關鍵設計。</span>
+          <span class="sub">Ⅴ 涉都市計畫變更者，得依<button class="k">都市計畫法第 27 條</button>辦理<button class="k">迅行變更</button>。Ⅵ 應劃設合理之使用分區、開發強度與容許使用項目，並適度<i>減輕開發義務負擔</i>。</span>
+        </span>
+      </li>
+      <li>
+        <span class="q">併同修正的其他重要條文？</span>
+        <span class="a">§20：主管機關得設<i>國營鐵路機構</i>，其設置另以法律定之（設置條例之法源）。§21：附屬事業範圍，第 5 款「<button class="k">培養、繁榮鐵路運輸及傳承鐵路文化所必需之其他事業</button>」為概括條款，是多角化空間。<button class="k">§47-1</button>：路線可串聯觀光地區並具觀光服務性質者，得<i>依觀光服務內涵收取費用</i>，是<button class="k">票價自主</button>之突破。<button class="k">§56-6</button>：鐵道局應檢討事故及異常事件，並建置<button class="k">鐵路安全報告系統</button>，<i>不以處分或追究責任為目的、對報告者身分保密</i>。</span>
+      </li>
+      <li>
+        <span class="q">§56-6 引進的是什麼概念？</span>
+        <span class="a"><button class="k">公正文化（Just Culture）</button>之自願通報機制——目的在使<i>潛藏條件</i>在釀災前被發現，而非追究第一線人員責任。這條可與瑞士起司理論、SMS 串在一起答。</span>
+      </li>
+      <li>
+        <span class="q">資產活化的意義與挑戰？（評析段）</span>
+        <span class="a">意義：財務面賦予土地開發與收益循環運用之法源；經營面轉型為「運輸本業＋不動產開發＋附屬事業」複合型國營事業，與<i>日本 JR 各社</i>模式接軌；治理面雙層審查兼顧效率與國有財產監督。挑戰：<button class="k">土地開發專業人才不足</button>、開發期程長而回收慢、都市計畫變更之地方協商成本、<button class="k">開發不得排擠本業安全投資</button>、開發利益如何避免圖利質疑（仍受政府採購法拘束）。</span>
+      </li>
+    </ul>
+    <p class="tip">你本身就是臺鐵員工，<b>出這題再自然不過</b>。113 高考考「公司化的效益」與「臺鐵公司的利害關係人」、115 高考考「公司化前後經營業務範圍之差異」——這三個變化題都要準備。</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">安全</span>運輸安全與瑞士起司理論<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">跨考別 10.7%；112 年佐級考瑞士起司理論</p>
+    <ul class="qa">
+      <li>
+        <span class="q">瑞士起司理論由誰提出？核心內涵為何？</span>
+        <span class="a">英國心理學家 <button class="k">James Reason</button> 提出。組織各層防護如一片片起司，每片皆有孔洞；孔洞來自<button class="k">顯性失誤（active failures，第一線不安全行為）</button>與<button class="k">潛藏條件（latent conditions，組織決策、設計、資源配置、制度缺陷）</button>。<i>唯有所有防護層之孔洞恰好排成一直線</i>，危害才會貫穿所有防護而釀成事故。</span>
+      </li>
+      <li>
+        <span class="q">這個理論的三個核心觀點？</span>
+        <span class="a">①重大事故極少由單一原因造成，而是<i>多重防護同時失效</i>之結果 ②<button class="k">組織因素（潛藏條件）</button>往往才是根本原因，責備第一線人員無助於防止事故重演 ③安全管理應致力於<button class="k">增加防護層數並縮小孔洞</button>。</span>
+      </li>
+      <li>
+        <span class="q">應用於軌道運輸安全管理，防護層有哪些？</span>
+        <span class="a"><button class="k">多重防護 defence in depth</button>：司機員警覺 → ATP／ATS 自動防護 → 號誌與閉塞 → 調度監控（CTC）→ 維修檢查 → 行車規章 → 監理稽核，任一層失效尚有其他層攔截。潛藏條件則包括：人力配置與<i>排班疲勞</i>、預算與維修週期、採購與外包管理、工程施工與行車之介面、教育訓練不足、規章形式化。</span>
+      </li>
+      <li>
+        <span class="q">軌道運輸安全管理涉及哪些層面？（人機料法）</span>
+        <span class="a"><button class="k">人</button>：資格與訓練、值勤時數與疲勞管理、酒測藥檢、SOP、安全文化與自願通報。<button class="k">機</button>：車輛、號誌、電力、軌道之設計檢修，ATP／ATS，<button class="k">RAMS</button>（可靠度、可用度、可維護度、安全性）管理。<button class="k">料／環境</button>：軌道路基邊坡橋隧維護、天候地震監測限速、平交道與異物入侵偵測。<button class="k">法／管理</button>：<button class="k">安全管理系統 SMS</button>——安全政策、風險辨識評估、風險控制、績效監測、稽核與持續改善。監督：鐵道局監理、<button class="k">運輸安全調查委員會</button>獨立調查重大事故。</span>
+      </li>
+      <li>
+        <span class="q">事故調查的取向應如何轉變？</span>
+        <span class="a">由「找出誰犯錯」轉為「<button class="k">為何系統允許此錯誤發生並貫穿所有防護</button>」；並重視<button class="k">虛驚事件（near miss）</button>——孔洞未對齊時之「差一點」事件是最寶貴的資訊來源，應建立通報、分析與回饋機制。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">通用設計</span>通用設計（Universal Design）<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第二題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂通用設計？與無障礙設計有何不同？</span>
+        <span class="a">由美國北卡州立大學 <button class="k">Ron Mace</button> 等人提出，指產品、環境、服務與系統之設計，<i>在最大可能之範圍內讓所有人都能公平使用，而無須另作調整或特殊化設計</i>。與無障礙設計之別：無障礙是針對特定障礙者之<button class="k">補救式、附加式</button>設計；通用設計則在<button class="k">規劃階段</button>即納入所有使用者（高齡者、孕婦、幼童、傷病者、攜帶大件行李者、外籍旅客），<i>成本更低、不產生標籤化</i>。</span>
+      </li>
+      <li>
+        <span class="q">通用設計七原則？</span>
+        <span class="a">①<button class="k">公平使用</button> ②<button class="k">彈性使用</button> ③<button class="k">簡單且直覺</button> ④<button class="k">明顯易察覺的資訊</button> ⑤<button class="k">容錯</button> ⑥<button class="k">省力</button> ⑦<button class="k">適當的尺寸與空間</button>。</span>
+      </li>
+      <li>
+        <span class="q">應用在鐵路系統的具體作法？</span>
+        <span class="a">車站：<button class="k">無障礙動線一站到底</button>、電梯優先於升降平台、寬幅閘門、導盲磚（引導與警示分明）、無障礙廁所與哺集乳室、沿線扶手與休憩座椅。月台與列車介面：<button class="k">月台與車廂地板齊平、縮小水平間隙</button>、渡板、月台門、輪椅席與嬰兒車空間。資訊：<button class="k">視覺與聽覺雙重呈現</button>、圖示化與多語、高對比與適當字級、一致化 wayfinding。售票與服務：售票機高度與語音導引、保留人工窗口與服務鈴、預約式協助。制度：友善服務訓練、使用者參與檢核。</span>
+      </li>
+      <li>
+        <span class="q">通用設計的政策意涵？（結論段）</span>
+        <span class="a">是<button class="k">社會永續性（Social Sustainability）</button>在運輸部門之具體實踐，回應《<button class="k">身心障礙者權利公約 CRPD</button>》與身心障礙者權益保障法。我國已進入<button class="k">超高齡社會</button>，通用設計不再是少數人的需求，而是多數旅客遲早都會需要的基本服務，對鐵路是<i>提升服務品質與運量的投資，而非成本負擔</i>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">TOD · 規劃</span>TOD 與捷運車站區位<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109 年第二題、112 年佐級考 TOD</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂 TOD？由誰提出？關鍵要素？</span>
+        <span class="a">以大眾運輸場站為核心，於步行可及範圍（約 <button class="k">400～800 公尺</button>）內進行<i>高密度、混合使用、適合步行</i>之土地開發，使運輸系統與土地使用相互支持。由 <button class="k">Peter Calthorpe</button> 提出，為新都市主義核心策略。關鍵要素 <button class="k">3D</button>：<i>密度 Density、多樣性 Diversity、設計 Design</i>，擴充為 <button class="k">5D</button>：加上<i>目的地可及性、至場站距離</i>。</span>
+      </li>
+      <li>
+        <span class="q">TOD 的具體內涵？</span>
+        <span class="a">①以場站為核心之<i>同心圓式強度分派</i>（愈近場站強度愈高）②住商辦文教混合使用 ③連續、安全、有遮蔽之步行與自行車環境 ④<button class="k">降低停車供給並採停車最大值管制</button> ⑤小街廓、高連通性路網 ⑥公共空間與街道生活 ⑦土地開發與運輸建設之財務連結（<i>聯合開發、TIF、開發權移轉</i>）。</span>
+      </li>
+      <li>
+        <span class="q">捷運車站位置選擇的主要考量因素？（109 年第二題）</span>
+        <span class="a">五大面向：①<i>運輸需求</i>——旅次 O-D 分布、站區 500 公尺內人口與就業密度、大型旅次產生源、既有公車高運量路廊 ②<i>路網與轉乘</i>——轉乘節點、<button class="k">站距都會區一般 0.8～1.2 公里</button>、步行可及範圍與第一／最後一哩路 ③<i>土地使用與都市發展</i>——都市計畫一致性、<button class="k">TOD 潛力與聯合開發</button>、都市縫合 ④<i>工程技術</i>——地質與地下水、既有管線構造物、<button class="k">車站宜設於平直段</button>、施工空間與交通維持 ⑤<i>經濟社會環境</i>——用地取得與拆遷、營運維護成本、環境影響、民意與公民參與、公平性與韌性。評估方法：<button class="k">成本效益分析 B/C</button>、<button class="k">多評準決策 AHP／TOPSIS</button>。</span>
+      </li>
+      <li>
+        <span class="q">站距太短或太長各有什麼問題？</span>
+        <span class="a">站距<i>過短</i>則<button class="k">旅行速度下降、營運成本上升</button>；<i>過長</i>則<button class="k">可及性不足、集客範圍縮小</button>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">需求 · 票價</span>需求彈性與票價策略<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">109 年第三題；票價與需求合計跨考別 17.5%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">需求價格彈性怎麼算？如何判讀？</span>
+        <span class="a">Ed＝<button class="k">運量變動率 ÷ 票價變動率</button>。|Ed|&lt;1 為<i>缺乏彈性</i>，調價後總收入<button class="k">上升</button>；|Ed|&gt;1 為<i>富有彈性</i>，調價後總收入<button class="k">下降</button>。</span>
+      </li>
+      <li>
+        <span class="q">大眾運輸的短期價格彈性約為多少？長期呢？</span>
+        <span class="a">短期一般約 <button class="k">−0.2 ～ −0.5</button>（缺乏彈性）；<i>長期</i>因旅客可調整運具選擇甚至居住就業區位，絕對值<button class="k">明顯放大</button>。<button class="k">交叉彈性</button>則衡量本運具運量對替代運具票價之反應，替代性愈強流失愈嚴重。</span>
+      </li>
+      <li>
+        <span class="q">臺鐵臺北－高雄調價，為何運量流失風險特別大？</span>
+        <span class="a">該走廊約 350 公里屬中長途城際，臺鐵定位為「<i>票價中低、旅行時間長</i>」，客群時間價值低、對票價敏感。調價後與<button class="k">國道客運</button>價差縮小（票價僅約自強號六至七成）→ 交叉彈性高最易流失；與<button class="k">高鐵</button>價差縮小 → 部分旅客「補一點錢省一半時間」而向上升級。故臺鐵在此走廊<button class="k">兩面受壓</button>，彈性高於中短程通勤走廊。</span>
+      </li>
+      <li>
+        <span class="q">旅客特性與旅次目的如何影響彈性？</span>
+        <span class="a">低所得、有自用車者彈性大；無車族、車站步行可及者彈性小；持定期票／TPASS 之常客黏著度高、彈性小。旅次目的：<button class="k">通勤通學（必要旅次）彈性最小</button>；商務旅次時間價值高、對票價不敏感；<button class="k">探親觀光休閒（自由旅次）彈性最大</button>——可延後、取消或改自駕，且多人同行時自駕每人成本更低，是主要流失來源。</span>
+      </li>
+      <li>
+        <span class="q">政策建議該怎麼寫？</span>
+        <span class="a">①採<button class="k">差別定價</button>（離峰折扣、早鳥、團體、區段費率）②<i>分階段小幅調整</i>並搭配明確服務改善承諾，使旅客感受「加價有加值」③策略重心移轉——長途與高鐵<i>合作而非硬碰硬</i>，聚焦<button class="k">中短程通勤與區域觀光</button>之比較利益 ④與 TPASS 定期票、轉乘優惠結合鞏固常客 ⑤調價前辦理運量與收入敏感度分析及公聽程序，並注意<button class="k">公共服務義務 PSO</button>與弱勢優待之社會公平。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">大眾運輸</span>路網整合與彈性服務<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">跨考別第 1 名主題 18.0%；109 年第四題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">捷運與公車為何必須整合？</span>
+        <span class="a">若原有公車路線維持不變，將與捷運<button class="k">平行競爭</button>，造成雙方運量稀釋、公車空車率上升、政府補貼加重；妥善整合則可形成「<button class="k">捷運為幹、公車為支</button>」之階層式路網。</span>
+      </li>
+      <li>
+        <span class="q">整合方式有哪幾種？（六大面向）</span>
+        <span class="a">①<button class="k">路網整合（最核心）</button>：平行路線縮減截短裁撤、改闢<i>接駁 feeder 路線</i>、建立幹支分工 ②<button class="k">場站與空間整合</button>：共構或緊鄰、公車專用道與優先號誌、風雨走廊與無障礙、YouBike 與 Kiss &amp; Ride ③<button class="k">票證與費率整合</button>：單一電子票證、<i>轉乘優惠</i>、<button class="k">多運具定期票（TPASS）</button>、避免轉乘懲罰 ④<button class="k">班表與營運整合</button>：<i>時刻協調 timed transfer</i>、班距配合、末班車銜接 ⑤<button class="k">資訊整合</button>：即時到站、一致化 wayfinding、<button class="k">單一 App 與 MaaS 平台</button> ⑥<button class="k">制度與組織整合</button>：統籌路線審議、聯營與收入清算、依《發展大眾運輸條例》辦理補貼與服務評鑑。</span>
+      </li>
+      <li>
+        <span class="q">整合的效益？</span>
+        <span class="a">使用者：縮短總旅行時間、降低轉乘費用與心理成本、提高可及性與可靠度。業者：避免惡性競爭與重複投資、降低空車率、擴大集客範圍。政府與社會：<button class="k">提高大眾運輸市占率</button>、降低能源消耗與碳排、提高既有投資使用效率、強化 <button class="k">TOD 效果</button>、提升交通安全與社會公平。都市：形成<button class="k">緊湊城市 compact city</button>。</span>
+      </li>
+      <li>
+        <span class="q">整合的關鍵在哪裡？（結論段，拉分）</span>
+        <span class="a">關鍵<i>不在硬體，而在制度與誘因設計</i>——若公車業者之補貼與績效指標仍以「<button class="k">路線里程</button>」或「<button class="k">行駛班次</button>」計算，業者即無配合裁撤平行路線之動機。應將評鑑與補貼指標改為<button class="k">整體路網運量、轉乘量與服務可靠度</button>。</span>
+      </li>
+      <li>
+        <span class="q">何謂需求反應式公共運輸（DRTS）？困境與因應？</span>
+        <span class="a">不採固定路線與班表，依旅客<i>事先預約或即時叫車</i>動態決定路線、時間與停靠點（偏鄉幸福巴士、復康巴士、公車式小黃），適用<button class="k">運量稀少、需求分散</button>之偏鄉與離峰。困境：需求不確定調度難、每延人公里成本高需高額補貼、預約機制對高齡者不友善、駕駛人力不足、與計程車業者衝突。因應：簡易預約管道（電話、村里長代訂）、<button class="k">智慧派遣與共乘演算法</button>、與計程車業者<i>合作而非競爭</i>、核心固定＋支線彈性之混合模式、結合醫療接送與物流多目的共乘、納入補助並以績效管考、與 MaaS 整合。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">永續</span>COP26 與淨零減碳<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第四題；永續淨零近三年升至 12.2%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">COP26 是什麼會議？成果文件叫什麼？</span>
+        <span class="a">《聯合國氣候變化綱要公約 UNFCCC》<button class="k">第 26 次締約方大會</button>，<button class="k">2021 年 11 月</button>於英國格拉斯哥召開（原訂 2020 年因疫情延期）。成果文件為《<button class="k">格拉斯哥氣候協議 Glasgow Climate Pact</button>》。</span>
+      </li>
+      <li>
+        <span class="q">COP26 的主要協議內容？</span>
+        <span class="a">①確認 <button class="k">1.5°C</button> 目標，較巴黎協定「低於 2°C、努力朝 1.5°C」更聚焦 ②<i>首次於聯合國氣候文件明文處理化石燃料</i>：<button class="k">逐步減少（phase-down）未搭配碳捕捉之燃煤發電</button>、<button class="k">逐步淘汰（phase-out）無效率化石燃料補貼</button> ③<button class="k">棘輪機制</button>：要求各方於 2022 年底前重新檢視並強化 2030 年 <button class="k">NDC</button>（原為每 5 年更新，此次要求提前）④完成巴黎協定規則書：<button class="k">第 6 條國際碳市場</button>機制與避免<button class="k">重複計算</button>之規則 ⑤氣候資金：敦促補足每年 <button class="k">1,000 億美元</button>承諾、2025 年前調適資金較 2019 年<button class="k">加倍</button>、就<i>損失與損害</i>設立對話機制。</span>
+      </li>
+      <li>
+        <span class="q">燃煤條文為何從 phase-out 改成 phase-down？</span>
+        <span class="a">原草案就燃煤使用為「<i>逐步淘汰</i>」，因<button class="k">印度、中國</button>等國於最後階段要求，改為「<i>逐步減少</i>」，為本次會議最受矚目之角力。</span>
+      </li>
+      <li>
+        <span class="q">場邊三大倡議？</span>
+        <span class="a">①<button class="k">全球甲烷承諾</button>：2030 年全球甲烷排放較 2020 年減少 <button class="k">30%</button> ②<button class="k">森林與土地利用宣言</button>：2030 年前終止並扭轉森林砍伐 ③<button class="k">格拉斯哥零排放車輛宣言</button>：<button class="k">2040 年前全球新售汽車與貨車 100% 零排放</button>，主要市場提前至 <button class="k">2035 年</button>。</span>
+      </li>
+      <li>
+        <span class="q">對運輸部門與臺鐵的意涵？</span>
+        <span class="a">①運具電動化時程壓力，我國 2050 淨零路徑將運輸電動化列為十二項關鍵戰略之一 ②<button class="k">鐵路為單位運輸量碳排最低之陸運方式</button>，<button class="k">運具移轉 modal shift</button>是最具成本效益之減碳手段，臺鐵已電氣化之優勢應被凸顯 ③企業層次：碳盤查 ISO 14064、<button class="k">SBTi</button>、供應鏈碳足跡、ESG 揭露 ④政策工具：碳費與碳定價（《<button class="k">氣候變遷因應法</button>》112 年施行、2050 淨零入法）⑤<button class="k">氣候調適</button>：極端天候對邊坡、軌道挫屈、電力系統之衝擊，屬韌性建設課題。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">行人安全</span>行人優先交通安全行動綱領<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">112 年第三題</p>
+    <ul class="qa">
+      <li>
+        <span class="q">推動背景與願景目標？</span>
+        <span class="a">我國行人死傷比例偏高，經外媒以「<i>行人地獄</i>」形容引發關注，行政院於 <button class="k">112 年</button>核定本綱領。願景：建構<button class="k">以人為本、行人優先</button>之安全交通環境。量化目標：<button class="k">2030 年死亡人數較基準年降低 30%</button>、<button class="k">2050 年達成零死亡願景（Vision Zero）</button>。核心理念：由「以車為本」轉向「以人為本」，採<button class="k">安全系統 Safe System</button>觀點——<i>承認人會犯錯，由道路設計與制度吸收錯誤後果</i>。</span>
+      </li>
+      <li>
+        <span class="q">推動主軸 4E 各包含什麼？</span>
+        <span class="a"><button class="k">工程 Engineering（最根本）</button>：行人穿越道退縮、<button class="k">行人庇護島</button>、縮小路口轉彎半徑、停止線退縮、行人專用時相與早開遲閉、消除路口視距障礙、<button class="k">標線型人行道改為實體人行道</button>、通學步道。<button class="k">教育 Education</button>：一貫之交通安全教育、<i>停讓行人</i>文化宣導、駕訓考照精進。<button class="k">執法 Enforcement</button>：<button class="k">不停讓行人罰則加重與記點</button>、<button class="k">科技執法</button>擴大布建。<button class="k">環境與評估</button>：制定<button class="k">道路交通安全基本法</button>、建立事故資料庫以資料驅動改善、對地方政府考核與經費掛鉤。</span>
+      </li>
+      <li>
+        <span class="q">對鐵路運輸的意涵？</span>
+        <span class="a">①<button class="k">平交道安全</button>：行人與慢車違規穿越為重大風險，應改善警示、遮斷、立體化與監視科技 ②<i>車站周邊人行環境</i>：站前廣場人車分流、接送區規劃、連續無障礙動線，直接影響<button class="k">第一／最後一哩路</button>安全與大眾運輸使用意願 ③與 TOD、TPASS 相互加乘，是提升公共運輸市占率之基礎工程。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">基本概念</span>競爭里程與均衡運輸<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">近三年「運輸基本概念」回升至 10.8%</p>
+    <ul class="qa">
+      <li>
+        <span class="q">何謂競爭里程？決定因素？</span>
+        <span class="a">不同運具因速度、票價、班次、可及性、站端時間之差異，各在特定運距區間具比較利益；<button class="k">兩運具市占率相等之運距</button>即為競爭里程（無異點）。決定因素：①旅行速度 ②<button class="k">站端時間</button>（航空之報到、安檢、提領行李、機場往返市區遠高於高鐵）③票價 ④班次頻率與時間可靠度 ⑤旅客時間價值與旅次目的。</span>
+      </li>
+      <li>
+        <span class="q">高鐵與航空的競爭里程約在哪個區間？我國情形？</span>
+        <span class="a">國際經驗：高鐵在約 <button class="k">500～800 公里</button>以下具明顯優勢，超過約 <button class="k">1,000 公里</button>則航空占優。我國臺北－高雄約 <button class="k">350 公里</button>，遠低於競爭里程，故高鐵通車後<button class="k">西部走廊國內航線幾乎全面退出</button>。對臺鐵之意涵：西部長途已無競爭里程優勢，應聚焦<button class="k">中短程通勤（30～100 公里）</button>與東部及觀光市場。</span>
+      </li>
+      <li>
+        <span class="q">何謂均衡運輸系統？</span>
+        <span class="a">又稱最佳運輸系統，指各種運具依其<i>技術經濟特性</i>（速度、容量、成本、可及性、彈性）<button class="k">各適其所、分工互補</button>，使整體<button class="k">社會總成本最低</button>、服務水準最適，而非任一運具獨大。強調運具間之合理分工與轉乘銜接，並兼顧效率、公平與環境。</span>
+      </li>
+      <li>
+        <span class="q">高乘載專用道（HOV）的設置條件與績效度量？</span>
+        <span class="a">屬<button class="k">運輸需求管理 TDM</button>手段。設置條件：走廊有嚴重持續之尖峰壅塞、<button class="k">現有車道數足夠（一般需 3 車道以上）</button>、高乘載車輛具一定比例、可安全隔離、有替代路線、<i>執法可行</i>、民眾接受度。績效度量最重要的是<button class="k">人流量 person throughput 而非車流量</button>，另有旅行時間節省、<button class="k">平均車輛乘載率 AVO</button>、違規使用率、共乘運量成長、排放減量、使用者滿意度。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section data-nav="規律">
+  <p class="sec-label">03 / 情報</p>
+  <h2>命題規律</h2>
+  <ul class="rules">
+    <li>
+      <h4>112 年那份卷完全轉向「政策時事題」</h4>
+      109 年是傳統運輸學（閉塞區間、捷運車站區位、需求彈性、公車捷運整合）；<b>112 年四題全部是當年度政策與國際議題</b>（鐵路法資產活化、通用設計、行人優先綱領、COP26）。這個轉向必須嚴肅看待——115 年若延續，死背教科書會全軍覆沒。
+    </li>
+    <li>
+      <h4>臺鐵公司化是跨考別最熱的鐵路題</h4>
+      113 高考考「公司化的效益」與「臺鐵公司的利害關係人」；115 高考考「公司化前後經營業務範圍之差異」與「都會區捷運化政策成效」。<b>鐵路升資考的考生本身就是臺鐵員工，出這題再自然不過。</b>
+    </li>
+    <li>
+      <h4>永續／淨零／減碳是所有考別的共同軸線</h4>
+      112 升資考已用 COP26 出過一次，114 高考考海運減碳、114 地特考 ASI 架構、113 地特考貨車電動化。這條線在 115 年只會更熱。
+    </li>
+    <li>
+      <h4>你的科目樣本最小，一定要靠跨考別補</h4>
+      鐵路升資考運輸學只有 109、112 兩份；但跨考別有 206 題可練。高考三級交通行政、地方特考、民航特考的卷子都是同一批命題委員的關注點。
+    </li>
+  </ul>
+</section>
+</div><!-- /運輸學 -->
+
+<div class="subject" data-sub="lw" data-name="法學英文">
+<ul class="subfacts">
+  <li class="hi">全測驗 50 題 × 2 分</li>
+  <li>60 分鐘</li>
+  <li>法學 30 題 ＋ 英文 20 題</li>
+  <li>憲法比法緒多</li>
+</ul>
+
+<section data-nav="結構">
+  <p class="sec-label">01 / 先讀哪裡</p>
+  <h2>結構與投資策略</h2>
+  <p class="lede">五年（109、110、111、112、114）每一年都是 50 題，切分點都在第 30／31 題，沒有例外。這是所有應試科目中結構最穩定的一科。</p>
+  <div class="scroll">
+    <table>
+      <caption>150 道中文題的組成（5 年實測）</caption>
+      <tbody>
+        <tr><td>中華民國憲法</td><td>88 題 · 每年約 <b>17～18 題</b></td></tr>
+        <tr><td>法學緒論</td><td>62 題 · 每年約 <b>12～13 題</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="subfreq"><b>憲法比法緒多</b>，這點與一般人的直覺相反——<b>憲法應是主戰場</b>。</p>
+  <div class="scroll">
+    <table>
+      <caption>憲法高頻考點（5 年命中題數）</caption>
+      <tbody>
+        <tr><td>人民之權利義務</td><td>58 題 · 年年考</td></tr>
+        <tr><td>司法院與違憲審查</td><td>50 題 · 年年考</td></tr>
+        <tr><td>考試院與監察院</td><td>24 題</td></tr>
+        <tr><td>立法院</td><td>21 題</td></tr>
+        <tr><td>總統與行政院</td><td>19 題</td></tr>
+        <tr><td>地方制度與均權</td><td>16 題</td></tr>
+        <tr><td>增修條文與修憲程序</td><td>13 題</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="scroll">
+    <table>
+      <caption>投資報酬率</caption>
+      <thead><tr><th>區塊</th><th>分數</th><th>成本</th><th>建議</th></tr></thead>
+      <tbody>
+        <tr><td>中央法規標準法＋法律解釋適用</td><td>10–15</td><td>極低</td><td><b>第一優先，必拿</b></td></tr>
+        <tr><td>憲法五院權限＋增修條文</td><td>約 15</td><td>低</td><td><b>第二優先，必拿</b></td></tr>
+        <tr><td>憲法人權與大法官解釋</td><td>約 20</td><td>中</td><td>以爭點整理</td></tr>
+        <tr><td>英文字彙 10 題</td><td>20</td><td>中</td><td>每天 20 字</td></tr>
+        <tr><td>英文克漏字與閱讀</td><td>20</td><td>低</td><td>練定位技巧</td></tr>
+        <tr><td>民刑商事法</td><td>約 10</td><td>高</td><td><b>不要投入太多</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tip">最有效率的做法是「<b>法學拿滿、英文拿一半</b>」。法學 30 題中的中央法規標準法、五院權限、增修條文屬於「讀了就會」，約 25 分可穩拿；英文 20 題求對 10～12 題。合計約 65～70 分，對共同科目已相當安全。</p>
+</section>
+
+<section data-nav="必背">
+  <p class="sec-label">02 / 觀念</p>
+  <h2>必背觀念</h2>
+
+  <div class="card">
+    <h3><span class="art">法緒</span>中央法規標準法<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">全科 CP 值最高的一部法，條文極少，一小時可讀完</p>
+    <ul class="qa">
+      <li>
+        <span class="q">法律的名稱有哪幾種？命令呢？</span>
+        <span class="a">法律得定名為<button class="k">法、律、條例、通則</button>（四種）。命令得依其性質稱<button class="k">規程、規則、細則、辦法、綱要、標準、準則</button>（七種）。</span>
+      </li>
+      <li>
+        <span class="q">哪些事項應以法律定之？</span>
+        <span class="a">①憲法或法律有明文規定應以法律定之者 ②<button class="k">關於人民之權利、義務者</button> ③<button class="k">關於國家各機關之組織者</button> ④其他重要事項應以法律定之者。</span>
+      </li>
+      <li>
+        <span class="q">法規的生效日期怎麼算？</span>
+        <span class="a">法規明定自公布或發布日施行者，自公布或發布之日起算<button class="k">至第三日</button>起發生效力；法規特定有施行日期者，自該日起發生效力。</span>
+      </li>
+      <li>
+        <span class="q">「從新從優」原則怎麼運用？</span>
+        <span class="a">各機關受理人民聲請許可案件<i>適用法規時，除依其性質應適用行為時法規外，如在處理程序終結前，據以准許之法規有變更者，適用<button class="k">新</button>法規</i>；<button class="k">但舊法規有利於當事人而新法規未廢除或禁止所聲請之事項者，適用舊法規</button>。</span>
+      </li>
+      <li>
+        <span class="q">法規修正與廢止的時機？</span>
+        <span class="a">修正時機：基於政策或事實之需要有增減內容之必要、因有關法規之修正或廢止而應配合修正、規定之主管機關或執行機關已裁併或變更、同一事項規定於二以上之法規無分別存在之必要。廢止之法規，除以命令廢止者外，自公布或發布之日起算<button class="k">至第三日</button>起失效。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">法緒</span>法律解釋與適用原則<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">法緒第 2 名主題，5 年 33 題，概念不多但年年考</p>
+    <ul class="qa">
+      <li>
+        <span class="q">法律解釋的方法有哪些？</span>
+        <span class="a"><button class="k">文義解釋</button>（依文字通常意義，為解釋之起點與界限）、<button class="k">論理解釋</button>（體系、歷史、目的、合憲解釋）、<button class="k">擴張解釋</button>與<button class="k">限縮解釋</button>、<button class="k">當然解釋</button>（舉重明輕、舉輕明重）、<button class="k">類推適用</button>（法律漏洞之填補，<i>刑法因罪刑法定原則原則上禁止不利類推</i>）。</span>
+      </li>
+      <li>
+        <span class="q">法律適用的四大原則？</span>
+        <span class="a"><button class="k">法律不溯及既往</button>、<button class="k">特別法優於普通法</button>、<button class="k">後法優於前法</button>、<button class="k">上位法優於下位法</button>。刑法另有<button class="k">從舊從輕</button>（行為後法律有變更者，適用行為時之法律；但行為後之法律有利於行為人者，適用最有利之法律）。</span>
+      </li>
+      <li>
+        <span class="q">法律的位階（淵源）順序？</span>
+        <span class="a"><button class="k">憲法 → 法律 → 命令</button>；法律不得牴觸憲法，命令不得牴觸憲法或法律。另有不成文法源：<button class="k">習慣、法理、判例（現為裁判）、學說、解釋</button>。民法第 1 條：<i>民事，法律所未規定者依習慣，無習慣者依法理</i>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">憲法</span>人民之權利義務與違憲審查<span class="stars">★★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">兩者合計超過七成，是絕對核心</p>
+    <ul class="qa">
+      <li>
+        <span class="q">題目的典型形態長什麼樣？該怎麼準備？</span>
+        <span class="a">典型形態：「<i>依司法院釋字第 ○○○ 號解釋意旨，關於○○原則，下列敘述何者正確？</i>」——考的<button class="k">不是條文背誦，而是解釋文的意旨</button>。準備方式：與其硬背 800 多號解釋，不如<button class="k">以爭點為單位整理</button>，每個爭點記住 <button class="k">2～3 號代表性解釋</button>即可。</span>
+      </li>
+      <li>
+        <span class="q">要整理哪些爭點？</span>
+        <span class="a">平等權、言論自由、<button class="k">人身自由（§8）</button>、財產權與工作權、訴訟權、<button class="k">比例原則（§23）</button>、<button class="k">法律保留（層級化保留體系，釋 443）</button>、正當法律程序、法律明確性、信賴保護。</span>
+      </li>
+      <li>
+        <span class="q">憲法第 23 條的內容？（比例原則的憲法依據）</span>
+        <span class="a">以上各條列舉之自由權利，除為<button class="k">防止妨礙他人自由、避免緊急危難、維持社會秩序、增進公共利益</button>所必要者外，不得以法律限制之。<i>四款事由＋「必要」二字，即為比例原則與法律保留之依據。</i></span>
+      </li>
+      <li>
+        <span class="q">比例原則的三個子原則？</span>
+        <span class="a"><button class="k">適當性</button>（手段有助於目的達成）、<button class="k">必要性</button>（在多種同樣有效之手段中選擇侵害最小者，又稱最小侵害原則）、<button class="k">衡量性／狹義比例原則</button>（手段所造成之損害不得與欲達成目的之利益顯失均衡）。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">憲法</span>五院權限與增修條文<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">「讀了就會」的部分，約 15 分必拿</p>
+    <ul class="qa">
+      <li>
+        <span class="q">考試院的職權？（與升資考本身直接相關）</span>
+        <span class="a">考試；公務人員之<button class="k">銓敘、保障、撫卹、退休</button>；公務人員<i>任免、考績、級俸、陞遷、褒獎之法制事項</i>（執行事項由各機關辦理）。<i>你參加的升資考本身就是考試院職權的行使。</i></span>
+      </li>
+      <li>
+        <span class="q">監察院的職權？</span>
+        <span class="a"><button class="k">彈劾、糾舉、糾正、審計</button>權。彈劾與糾舉對象為<i>公務人員</i>；<button class="k">糾正權對行政院及其有關部會</button>；審計權由審計長行使。監察委員由<button class="k">總統提名，經立法院同意</button>任命。</span>
+      </li>
+      <li>
+        <span class="q">立法院的主要職權？</span>
+        <span class="a">議決<i>法律案、預算案、戒嚴案、大赦案、宣戰案、媾和案、條約案</i>；質詢權；<button class="k">人事同意權</button>；提出<button class="k">不信任案</button>；聽取總統國情報告；提出彈劾總統副總統與罷免案。</span>
+      </li>
+      <li>
+        <span class="q">覆議與不信任案的程序？</span>
+        <span class="a"><button class="k">覆議</button>：行政院對立法院決議之法律案、預算案、條約案認窒礙難行時，經<i>總統核可</i>，於決議送達<button class="k">10 日</button>內移請立法院覆議；立法院應於送達<button class="k">15 日</button>內作成決議；<button class="k">全體立法委員二分之一以上</button>決議維持原案，行政院院長應即接受。<button class="k">不信任案</button>：經全體立委三分之一以上連署對行政院長提出，<button class="k">全體立委二分之一以上贊成</button>即為通過，行政院長應提出辭職並得呈請總統解散立法院。</span>
+      </li>
+      <li>
+        <span class="q">增修條文改變了哪些重要制度？（考的多半是現行狀態）</span>
+        <span class="a"><button class="k">國民大會廢除</button>；<button class="k">行政院長由總統直接任命，不需立法院同意</button>；修憲改由<i>立法院提案（四分之一提議、四分之三出席、出席四分之三決議）＋公民複決</i>；立法委員<button class="k">113 席、任期 4 年</button>（區域 73、原住民 6、全國不分區 34）；司法院大法官<button class="k">15 人、任期 8 年、不分屆次、不得連任</button>；<button class="k">省虛級化</button>。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">法緒</span>民法基本概念<span class="stars">★</span><button class="allbtn" type="button">全開</button></h3>
+    <p class="why">只讀「總則＋債編通則＋繼承」即可，不必讀完民法</p>
+    <ul class="qa">
+      <li>
+        <span class="q">行為能力如何分級？</span>
+        <span class="a"><button class="k">未滿 7 歲</button>之未成年人為<i>無行為能力人</i>；<button class="k">7 歲以上之未成年人</button>為<i>限制行為能力人</i>；<button class="k">滿 18 歲為成年</button>，有完全行為能力（民法第 12 條，112 年 1 月 1 日施行）。</span>
+      </li>
+      <li>
+        <span class="q">法定繼承人的順位與配偶的地位？</span>
+        <span class="a">順位：①<button class="k">直系血親卑親屬</button> ②<button class="k">父母</button> ③<button class="k">兄弟姊妹</button> ④<button class="k">祖父母</button>。<button class="k">配偶有相互繼承遺產之權，與各順序繼承人共同繼承</button>，不列入順位。</span>
+      </li>
+      <li>
+        <span class="q">公法與私法、實體法與程序法怎麼分？</span>
+        <span class="a">公法規範<i>國家與人民間之權力關係</i>（憲法、行政法、刑法、訴訟法）；私法規範<i>私人間之對等關係</i>（民法、公司法）。實體法規定<i>權利義務之發生變更消滅</i>（民法、刑法）；程序法規定<i>實現實體法之程序</i>（民事訴訟法、刑事訴訟法、行政程序法）。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="art">英文</span>英文 20 題的結構與策略<span class="stars">★★</span><button class="allbtn" type="button">全開</button></h3>
+    <ul class="qa">
+      <li>
+        <span class="q">英文部分的固定結構？</span>
+        <span class="a">31–40 <button class="k">單題字彙</button> 10 題｜41–45 <button class="k">克漏字</button> 5 題（一篇約 250 字短文挖 5 空）｜46–50 <button class="k">閱讀測驗</button> 5 題。</span>
+      </li>
+      <li>
+        <span class="q">字彙難度與出題特徵？</span>
+        <span class="a">屬<button class="k">中高階</button>，多為<button class="k">動詞與抽象名詞</button>（如 alleviate、contend、hedge、solidify、convey、apprehend、rehabilitation），且四個選項常為<button class="k">形近或同字首字</button>（solicit／solidify／revolve／resolve）。所以要注意<i>字根字首</i>（re-、sub-、con-、-tion）。</span>
+      </li>
+      <li>
+        <span class="q">時間怎麼分配？</span>
+        <span class="a">整科 50 題 60 分鐘，平均每題 <button class="k">72 秒</button>。<button class="k">英文放在最後寫</button>，先確保 30 題法學拿分。建議：法學 30 分｜字彙 8 分｜克漏字 7 分｜閱讀 10 分｜劃卡檢查 5 分。閱讀若時間不足，優先做<button class="k">問細節</button>的題目（可定位），而非問主旨的題目。</span>
+      </li>
+    </ul>
+  </div>
+</section>
+</div><!-- /法學英文 -->
+
+<section id="test">
+  <p class="sec-label" id="testlabel">自我檢測</p>
+  <h2>小測驗</h2>
+  <p class="lede">一次只考一個主題，不混題。申論題沒辦法自動批改——看完答案自己評「默寫得出來嗎」，這比選擇題更貼近真正的考場。評完會存在這台裝置裡，常錯的題目下次優先出。切換上面的科目，題庫與紀錄都會跟著換。</p>
+
+  <div class="panel" id="panel">
+    <div class="topics" id="topics"></div>
+    <button class="start" id="startwrong" type="button">跨主題複習：只考我錯過的</button>
+    <p class="stat-line" id="statline"></p>
+  </div>
+
+  <div class="quizcard" id="quizcard" hidden></div>
+  <div class="result" id="result" hidden></div>
+</section>
+
+<section id="wrong">
+  <p class="sec-label">弱點</p>
+  <h2>我常錯的題目</h2>
+  <p class="lede">只顯示目前科目，依主題分開統計，錯最多次的排在各主題最前面。點題目展開答案。</p>
+  <div id="wronglist"></div>
+  <div style="display:flex;gap:.4rem;margin-top:1rem;flex-wrap:wrap">
+    <button class="ghost" id="clear" type="button">清除本科紀錄</button>
+  </div>
+  <details class="io">
+    <summary>備份／換裝置（紀錄只存在這台裝置的瀏覽器）</summary>
+    <p style="margin:.5rem 0 0">把下面這串複製起來收好；換手機或清過瀏覽器資料後，貼回來按「還原」即可接續。各科的紀錄都在同一串裡。</p>
+    <textarea id="iobox" spellcheck="false" aria-label="紀錄備份字串"></textarea>
+    <div class="iobtns">
+      <button class="ghost" id="ioexport" type="button">產生備份字串</button>
+      <button class="ghost" id="ioimport" type="button">還原</button>
+    </div>
+  </details>
+</section>
+
+<footer>
+  資料來源：考選部歷屆試題實測統計——採購法 91 份試卷（申論 307 題）、企業管理 18 份 72 題、運輸學 51 份 206 題、共同科目 5 屆試題與標準答案。條文以全國法規資料庫現行條文核對；政策文件請以最新核定版本為準。<br>
+  對應本機檔案：<code>生資考\歷屆試題\</code> 之 <code>政府採購法_歷屆易考重點.md</code>、<code>企業管理_歷屆分析與升資考參考答案.md</code>、<code>運輸學_歷屆分析與升資考參考答案.md</code>、<code>共同科目_國文與法學知識英文_考點分析.md</code>。
+</footer>
+
+</div>
+
+<script>
+  (function () {
+    var body = document.body;
+    var keys = [].slice.call(document.querySelectorAll('.k'));
+    var answers = [].slice.call(document.querySelectorAll('.a'));
+    var modeBtns = [].slice.call(document.querySelectorAll('.modes button'));
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ══ 本機儲存（不進伺服器，只留在這台裝置的瀏覽器） ══ */
+    var store = (function () {
+      var ok = true, mem = {};
+      try { localStorage.setItem('__pl', '1'); localStorage.removeItem('__pl'); }
+      catch (e) { ok = false; }
+      return {
+        ok: ok,
+        get: function (k, d) {
+          try { var v = ok ? localStorage.getItem(k) : mem[k]; return v ? JSON.parse(v) : d; }
+          catch (e) { return d; }
+        },
+        set: function (k, v) {
+          try { var s = JSON.stringify(v); if (ok) { localStorage.setItem(k, s); } else { mem[k] = s; } }
+          catch (e) {}
+        }
+      };
+    })();
+
+    /* 題目 id 取自問句字串，順序調動不會弄丟紀錄 */
+    function hash(s) {
+      var h = 5381;
+      for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+      return h.toString(36);
+    }
+
+    /* ══ 依科目 → 主題建題庫：一張卡＝一個主題 ══ */
+    var SUBJECTS = [].slice.call(document.querySelectorAll('.subject')).map(function (el) {
+      var topics = [].slice.call(el.querySelectorAll('.card')).map(function (card) {
+        var h3 = card.querySelector('h3').cloneNode(true);
+        [].slice.call(h3.querySelectorAll('.art,.stars,.allbtn')).forEach(function (n) { n.parentNode.removeChild(n); });
+        return {
+          art: card.querySelector('.art').textContent.trim(),
+          name: h3.textContent.trim(),
+          qs: [].slice.call(card.querySelectorAll('ul.qa > li')).map(function (li) {
+            var text = li.querySelector('.q').textContent.trim();
+            return { id: hash(text), q: text, a: li.querySelector('.a').innerHTML, li: li };
+          })
+        };
+      }).filter(function (t) { return t.qs.length > 0; });
+      return {
+        key: el.getAttribute('data-sub'),
+        name: el.getAttribute('data-name'),
+        el: el,
+        topics: topics,
+        all: topics.reduce(function (a, t) { return a.concat(t.qs); }, [])
+      };
+    });
+    /* TOPICS / ALL 永遠指向「目前科目」，於 refresh() 時同步 */
+    var cur = SUBJECTS[0], TOPICS = cur.topics, ALL = cur.all;
+
+    var stats = store.get('pl-stats', {});
+    function st(id) { return stats[id] || { r: 0, v: 0, w: 0, last: 0 }; }
+    function total(s) { return s.r + s.v + s.w; }
+    function missRate(s) { var n = total(s); return n ? (s.w + 0.5 * s.v) / n : 0.55; }
+    function save() { store.set('pl-stats', stats); }
+    function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+    var panel = document.getElementById('panel');
+    var topicsEl = document.getElementById('topics');
+    var qcEl = document.getElementById('quizcard');
+    var resEl = document.getElementById('result');
+    var wrongEl = document.getElementById('wronglist');
+    var swBtn = document.getElementById('startwrong');
+    var testSec = document.getElementById('test');
+    var session = null;
+
+    /* 一律對齊到「小測驗」標題（section 已設 scroll-margin-top，不會被吸頂列蓋住） */
+    function toTest() {
+      testSec.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+    }
+
+    function bindRows(root) {
+      [].slice.call(root.querySelectorAll('.wrowhead')).forEach(function (h) {
+        h.addEventListener('click', function () { h.parentNode.classList.toggle('open'); });
+      });
+    }
+
+    /* ══ 主題清單 ══ */
+    function renderTopics() {
+      topicsEl.innerHTML = '';
+      TOPICS.forEach(function (t) {
+        var attempts = 0, right = 0, wrongQ = 0;
+        t.qs.forEach(function (q) {
+          var s = st(q.id);
+          attempts += total(s); right += s.r;
+          if (s.w > 0) wrongQ++;
+        });
+        var acc = attempts ? Math.round(right / attempts * 100) : null;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'topic';
+        b.innerHTML =
+          '<span class="tname">' + esc(t.name) +
+            '<span class="tart">' + esc(t.art) + ' · ' + t.qs.length + ' 題</span></span>' +
+          '<span class="tmeta">' +
+            (acc === null ? '<b class="new">未測驗</b>'
+                          : '<b class="' + (acc < 70 ? 'bad' : '') + '">正確率 ' + acc + '%</b>') +
+            (wrongQ ? '錯 ' + wrongQ + ' 題' : (acc === null ? '' : '無錯題')) +
+          '</span><span class="go">▸</span>';
+        b.addEventListener('click', function () { startQuiz(t.qs.slice(), t.name); });
+        topicsEl.appendChild(b);
+      });
+    }
+
+    function renderStatLine() {
+      var seen = 0, att = 0, right = 0;
+      ALL.forEach(function (q) {
+        var s = st(q.id), n = total(s);
+        if (n) { seen++; att += n; right += s.r; }
+      });
+      var txt = att
+        ? '累計作答 <b>' + att + '</b> 次 · 整體正確率 <b>' + Math.round(right / att * 100) +
+          '%</b> · 已測過 <b>' + seen + ' / ' + ALL.length + '</b> 題'
+        : '還沒有紀錄。挑一個主題開始——每個主題只有 3–7 題，通勤一趟就考得完一輪。';
+      if (!store.ok) txt += '<br><span class="warnline">這個瀏覽器不允許本機儲存，關掉頁面紀錄就會消失。</span>';
+      document.getElementById('statline').innerHTML = txt;
+    }
+
+    function renderWrongBtn() {
+      var n = ALL.filter(function (q) { return st(q.id).w > 0; }).length;
+      swBtn.disabled = !n;
+      swBtn.textContent = n ? '跨主題複習：只考我錯過的 ' + n + ' 題' : '跨主題複習：目前沒有錯題';
+    }
+
+    /* ══ 錯題本（依主題分開） ══ */
+    function renderWrongBook() {
+      var html = '', any = false;
+      TOPICS.forEach(function (t) {
+        var rows = t.qs.filter(function (q) { var s = st(q.id); return s.w > 0 || s.v > 0; })
+          .sort(function (a, b) {
+            var sa = st(a.id), sb = st(b.id);
+            return (sb.w - sa.w) || (missRate(sb) - missRate(sa));
+          });
+        if (!rows.length) return;
+        any = true;
+        html += '<p class="gradeq" style="margin-top:1.2rem">' + esc(t.art) + '　' + esc(t.name) + '</p>';
+        rows.forEach(function (q) {
+          var s = st(q.id), n = total(s), acc = n ? Math.round(s.r / n * 100) : 0;
+          html +=
+            '<div class="wrongrow"><button class="wrowhead" type="button">' +
+              '<span class="wq">' + esc(q.q) + '</span>' +
+              '<span class="wn">不會 ' + s.w + ' · 模糊 ' + s.v + ' · 會 ' + s.r + '</span>' +
+            '</button>' +
+            '<div class="acc"><span style="width:' + acc + '%"></span></div>' +
+            '<div class="wa">' + q.a + '</div></div>';
+        });
+      });
+      wrongEl.innerHTML = any ? html
+        : '<p class="empty">還沒有錯題紀錄。<br>先挑一個主題考一輪，答錯的會自動收進這裡，並依主題分開排。</p>';
+      bindRows(wrongEl);
+    }
+
+    /* 在必背小題上標出常錯 */
+    function markHot() {
+      [].slice.call(document.querySelectorAll('.subject .hot')).forEach(function (n) { n.parentNode.removeChild(n); });
+      ALL.forEach(function (q) {
+        var s = st(q.id);
+        if (s.w >= 2) {
+          var b = document.createElement('span');
+          b.className = 'hot';
+          b.textContent = '常錯 ×' + s.w;
+          var qEl = q.li.querySelector('.q');
+          qEl.insertBefore(b, qEl.firstChild);
+        }
+      });
+    }
+
+    /* ══ 科目切換 ══ */
+    var tabsEl = document.getElementById('tabs');
+    var jumpEl = document.getElementById('jump');
+    var testLabel = document.getElementById('testlabel');
+
+    function renderTabs() {
+      tabsEl.innerHTML = '';
+      SUBJECTS.forEach(function (s) {
+        var wrongN = s.all.filter(function (q) { return st(q.id).w > 0; }).length;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-pressed', String(s === cur));
+        b.innerHTML = esc(s.name) + (wrongN ? '<span class="badge">' + wrongN + '</span>' : '');
+        b.addEventListener('click', function () { switchTo(s); });
+        tabsEl.appendChild(b);
+      });
+    }
+
+    function renderJump() {
+      var html = '';
+      [].slice.call(cur.el.querySelectorAll('section')).forEach(function (sec, i) {
+        if (!sec.id) sec.id = cur.key + '-s' + i;
+        var h2 = sec.querySelector('h2');
+        var label = sec.getAttribute('data-nav') || (h2 ? h2.textContent.trim() : '');
+        if (label) html += '<a href="#' + sec.id + '">' + esc(label) + '</a>';
+      });
+      jumpEl.innerHTML = html + '<a href="#test">測驗</a><a href="#wrong">錯題本</a>';
+    }
+
+    function switchTo(s) {
+      if (session) { session = null; qcEl.hidden = true; resEl.hidden = true; panel.hidden = false; testSec.classList.remove('quizzing'); }
+      cur = s;
+      SUBJECTS.forEach(function (x) { x.el.classList.toggle('on', x === cur); });
+      store.set('pl-sub', s.key);
+      refresh();
+      toTest();
+    }
+
+    function refresh() {
+      TOPICS = cur.topics; ALL = cur.all;
+      testLabel.textContent = '自我檢測 · ' + cur.name;
+      renderTabs(); renderJump();
+      renderTopics(); renderStatLine(); renderWrongBtn(); renderWrongBook(); markHot();
+    }
+
+    /* ══ 測驗流程 ══ */
+    function startQuiz(list, label) {
+      if (!list.length) return;
+      setMode('none');
+      list.sort(function (a, b) {
+        return (missRate(st(b.id)) + Math.random() * 0.12) - (missRate(st(a.id)) + Math.random() * 0.12);
+      });
+      session = { list: list, i: 0, label: label, log: [] };
+      panel.hidden = true; resEl.hidden = true; qcEl.hidden = false;
+      testSec.classList.add('quizzing');
+      renderQ();
+      toTest();
+    }
+
+    function renderQ() {
+      var q = session.list[session.i];
+      qcEl.innerHTML =
+        '<div class="qtop"><span>' + esc(session.label) + '</span>' +
+          '<span>' + (session.i + 1) + ' / ' + session.list.length + '</span>' +
+          '<button class="quit" type="button">結束</button></div>' +
+        '<div class="bar-prog"><span style="width:' + Math.round(session.i / session.list.length * 100) + '%"></span></div>' +
+        '<p class="qtext">' + esc(q.q) + '</p>' +
+        '<div class="ansslot"></div>' +
+        '<button class="showbtn" type="button">看答案</button>';
+      qcEl.querySelector('.quit').addEventListener('click', endQuiz);
+      qcEl.querySelector('.showbtn').addEventListener('click', function () { showAns(q); });
+    }
+
+    function showAns(q) {
+      qcEl.querySelector('.ansslot').innerHTML = '<div class="qans">' + q.a + '</div>';
+      var btn = qcEl.querySelector('.showbtn');
+      btn.outerHTML =
+        '<p class="gradeq">默寫得出來嗎？</p>' +
+        '<div class="grades">' +
+          '<button class="g-r" type="button" data-g="r">會<small>完整寫得出</small></button>' +
+          '<button class="g-v" type="button" data-g="v">模糊<small>漏了細節</small></button>' +
+          '<button class="g-w" type="button" data-g="w">不會<small>答不出來</small></button>' +
+        '</div>';
+      [].slice.call(qcEl.querySelectorAll('.grades button')).forEach(function (b) {
+        b.addEventListener('click', function () { grade(q, b.getAttribute('data-g')); });
+      });
+    }
+
+    function grade(q, g) {
+      var s = st(q.id);
+      s[g]++; s.last = Date.now();
+      stats[q.id] = s; save();
+      session.log.push({ q: q, g: g });
+      session.i++;
+      if (session.i >= session.list.length) { finish(); } else { renderQ(); }
+    }
+
+    function finish() {
+      var r = 0, v = 0, w = 0;
+      session.log.forEach(function (x) { if (x.g === 'r') r++; else if (x.g === 'v') v++; else w++; });
+      var bad = session.log.filter(function (x) { return x.g !== 'r'; });
+      var label = session.label;
+      var again = session.list.slice();
+      var badQs = bad.map(function (x) { return x.q; });
+
+      var html =
+        '<div class="qtop"><span>' + esc(label) + '</span><span>測驗結束</span></div>' +
+        '<div class="score"><span class="s-r">會 ' + r + '</span>' +
+          '<span class="s-v">模糊 ' + v + '</span><span class="s-w">不會 ' + w + '</span></div>';
+      if (bad.length) {
+        html += '<p class="gradeq">這次沒過關的 ' + bad.length + ' 題</p>';
+        bad.forEach(function (x) {
+          html +=
+            '<div class="wrongrow"><button class="wrowhead" type="button">' +
+              '<span class="wq">' + esc(x.q.q) + '</span>' +
+              '<span class="wn">' + (x.g === 'w' ? '不會' : '模糊') + '</span></button>' +
+            '<div class="wa">' + x.q.a + '</div></div>';
+        });
+      } else {
+        html += '<p class="gradeq">全部答對，這個主題可以先放著。</p>';
+      }
+      html += '<div class="again"><button type="button" data-a="redo">再測一次這個主題</button>' +
+        (bad.length ? '<button type="button" class="sec" data-a="bad">只重考這 ' + bad.length + ' 題</button>' : '') +
+        '<button type="button" class="sec" data-a="back">回主題清單</button></div>';
+
+      resEl.innerHTML = html;
+      qcEl.hidden = true; resEl.hidden = false;
+      bindRows(resEl);
+      [].slice.call(resEl.querySelectorAll('.again button')).forEach(function (b) {
+        b.addEventListener('click', function () {
+          var a = b.getAttribute('data-a');
+          if (a === 'redo') { startQuiz(again.slice(), label); }
+          else if (a === 'bad') { startQuiz(badQs.slice(), label + '（重考）'); }
+          else { endQuiz(); }
+        });
+      });
+      refresh();
+      toTest();
+    }
+
+    function endQuiz() {
+      session = null;
+      qcEl.hidden = true; resEl.hidden = true; panel.hidden = false;
+      testSec.classList.remove('quizzing');
+      refresh();
+      toTest();
+    }
+
+    swBtn.addEventListener('click', function () {
+      startQuiz(ALL.filter(function (q) { return st(q.id).w > 0; }), '跨主題錯題複習');
+    });
+
+    /* 兩段式確認：iframe 沙箱會擋掉 confirm()，不能靠彈窗 */
+    (function () {
+      var btn = document.getElementById('clear');
+      var armed = false, timer = null;
+      function disarm() {
+        armed = false;
+        if (timer) { clearTimeout(timer); timer = null; }
+        btn.className = 'ghost';
+        btn.textContent = '清除本科紀錄';
+      }
+      btn.addEventListener('click', function () {
+        if (!armed) {
+          armed = true;
+          btn.className = 'ghost danger';
+          btn.textContent = '再按一次＝刪光「' + cur.name + '」的紀錄';
+          timer = setTimeout(disarm, 6000);
+          return;
+        }
+        if (timer) { clearTimeout(timer); timer = null; }
+        armed = false;
+        cur.all.forEach(function (q) { delete stats[q.id]; });
+        save(); refresh();
+        btn.className = 'ghost done';
+        btn.textContent = '已清除';
+        timer = setTimeout(disarm, 2000);
+      });
+    })();
+
+    var iobox = document.getElementById('iobox');
+    document.getElementById('ioexport').addEventListener('click', function () {
+      iobox.value = JSON.stringify(stats);
+      iobox.focus(); iobox.select();
+    });
+    document.getElementById('ioimport').addEventListener('click', function () {
+      try {
+        var obj = JSON.parse(iobox.value);
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) throw new Error('bad');
+        stats = obj; save(); refresh();
+        iobox.value = '已還原 ' + Object.keys(obj).length + ' 題的紀錄。';
+      } catch (e) {
+        iobox.value = '格式不正確，請貼上完整的備份字串。';
+      }
+    });
+
+    /* 每一小題後面掛一顆〈答案〉 */
+    answers.forEach(function (a) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'reveal';
+      b.textContent = '答案';
+      a.parentNode.insertBefore(b, a.nextSibling);
+      b.addEventListener('click', function () { a.classList.add('open'); });
+    });
+
+    /* 數字色塊：點一下顯示 */
+    keys.forEach(function (k) {
+      k.type = 'button';
+      k.tabIndex = -1;
+      k.addEventListener('click', function () {
+        if (body.classList.contains('mask-k')) k.classList.toggle('shown');
+      });
+    });
+
+    /* 卡片層級：全開／全收 */
+    [].slice.call(document.querySelectorAll('.allbtn')).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.card');
+        var list = [].slice.call(card.querySelectorAll('.a'));
+        var anyClosed = list.some(function (a) { return !a.classList.contains('open'); });
+        list.forEach(function (a) { a.classList.toggle('open', anyClosed); });
+        btn.textContent = anyClosed ? '全收' : '全開';
+      });
+    });
+
+    function setMode(mode) {
+      body.classList.toggle('mask-a', mode === 'a');
+      body.classList.toggle('mask-k', mode === 'k');
+      modeBtns.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
+      });
+      answers.forEach(function (a) { a.classList.remove('open'); });
+      keys.forEach(function (k) {
+        k.classList.remove('shown');
+        k.tabIndex = mode === 'k' ? 0 : -1;
+      });
+      [].slice.call(document.querySelectorAll('.allbtn')).forEach(function (b) { b.textContent = '全開'; });
+      store.set('pl-mode', mode);
+    }
+
+    modeBtns.forEach(function (b) {
+      b.addEventListener('click', function () { setMode(b.getAttribute('data-mode')); });
+    });
+
+    var savedKey = store.get('pl-sub', null);
+    SUBJECTS.forEach(function (s) {
+      if (s.key === savedKey) cur = s;
+      s.el.classList.toggle('on', false);
+    });
+    cur.el.classList.add('on');
+
+    setMode(store.get('pl-mode', 'none'));
+    refresh();
+  })();
+</script>
